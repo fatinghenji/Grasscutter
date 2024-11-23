@@ -19,35 +19,39 @@ public final class WidgetReportReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool Unk2700_MFEHMLBNNAG = 5;</code>
-     * @return The unk2700MFEHMLBNNAG.
+     * <code>bool IENCBHNGNDM = 2;</code>
+     * @return The iENCBHNGNDM.
      */
-    boolean getUnk2700MFEHMLBNNAG();
+    boolean getIENCBHNGNDM();
 
     /**
-     * <code>bool is_client_collect = 14;</code>
-     * @return The isClientCollect.
-     */
-    boolean getIsClientCollect();
-
-    /**
-     * <code>bool is_clear_hint = 13;</code>
-     * @return The isClearHint.
-     */
-    boolean getIsClearHint();
-
-    /**
-     * <code>uint32 material_id = 15;</code>
+     * <code>uint32 material_id = 11;</code>
      * @return The materialId.
      */
     int getMaterialId();
+
+    /**
+     * <code>uint32 weather_wizard_shield_value = 14;</code>
+     * @return The weatherWizardShieldValue.
+     */
+    int getWeatherWizardShieldValue();
+
+    /**
+     * <code>bool NEIOFMCDAKD = 3;</code>
+     * @return The nEIOFMCDAKD.
+     */
+    boolean getNEIOFMCDAKD();
+
+    /**
+     * <code>bool KPAMJCLNJIF = 5;</code>
+     * @return The kPAMJCLNJIF.
+     */
+    boolean getKPAMJCLNJIF();
   }
   /**
    * <pre>
-   * CmdId: 4291
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 2271
+   * Obf: HLEILGAJMPD
    * </pre>
    *
    * Protobuf type {@code WidgetReportReq}
@@ -94,24 +98,29 @@ public final class WidgetReportReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
-              unk2700MFEHMLBNNAG_ = input.readBool();
+              iENCBHNGNDM_ = input.readBool();
               break;
             }
-            case 104: {
+            case 24: {
 
-              isClearHint_ = input.readBool();
+              nEIOFMCDAKD_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              kPAMJCLNJIF_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              materialId_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              isClientCollect_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              materialId_ = input.readUInt32();
+              weatherWizardShieldValue_ = input.readUInt32();
               break;
             }
             default: {
@@ -146,48 +155,59 @@ public final class WidgetReportReqOuterClass {
               emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.class, emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.Builder.class);
     }
 
-    public static final int UNK2700_MFEHMLBNNAG_FIELD_NUMBER = 5;
-    private boolean unk2700MFEHMLBNNAG_;
+    public static final int IENCBHNGNDM_FIELD_NUMBER = 2;
+    private boolean iENCBHNGNDM_;
     /**
-     * <code>bool Unk2700_MFEHMLBNNAG = 5;</code>
-     * @return The unk2700MFEHMLBNNAG.
+     * <code>bool IENCBHNGNDM = 2;</code>
+     * @return The iENCBHNGNDM.
      */
     @java.lang.Override
-    public boolean getUnk2700MFEHMLBNNAG() {
-      return unk2700MFEHMLBNNAG_;
+    public boolean getIENCBHNGNDM() {
+      return iENCBHNGNDM_;
     }
 
-    public static final int IS_CLIENT_COLLECT_FIELD_NUMBER = 14;
-    private boolean isClientCollect_;
-    /**
-     * <code>bool is_client_collect = 14;</code>
-     * @return The isClientCollect.
-     */
-    @java.lang.Override
-    public boolean getIsClientCollect() {
-      return isClientCollect_;
-    }
-
-    public static final int IS_CLEAR_HINT_FIELD_NUMBER = 13;
-    private boolean isClearHint_;
-    /**
-     * <code>bool is_clear_hint = 13;</code>
-     * @return The isClearHint.
-     */
-    @java.lang.Override
-    public boolean getIsClearHint() {
-      return isClearHint_;
-    }
-
-    public static final int MATERIAL_ID_FIELD_NUMBER = 15;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 11;
     private int materialId_;
     /**
-     * <code>uint32 material_id = 15;</code>
+     * <code>uint32 material_id = 11;</code>
      * @return The materialId.
      */
     @java.lang.Override
     public int getMaterialId() {
       return materialId_;
+    }
+
+    public static final int WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER = 14;
+    private int weatherWizardShieldValue_;
+    /**
+     * <code>uint32 weather_wizard_shield_value = 14;</code>
+     * @return The weatherWizardShieldValue.
+     */
+    @java.lang.Override
+    public int getWeatherWizardShieldValue() {
+      return weatherWizardShieldValue_;
+    }
+
+    public static final int NEIOFMCDAKD_FIELD_NUMBER = 3;
+    private boolean nEIOFMCDAKD_;
+    /**
+     * <code>bool NEIOFMCDAKD = 3;</code>
+     * @return The nEIOFMCDAKD.
+     */
+    @java.lang.Override
+    public boolean getNEIOFMCDAKD() {
+      return nEIOFMCDAKD_;
+    }
+
+    public static final int KPAMJCLNJIF_FIELD_NUMBER = 5;
+    private boolean kPAMJCLNJIF_;
+    /**
+     * <code>bool KPAMJCLNJIF = 5;</code>
+     * @return The kPAMJCLNJIF.
+     */
+    @java.lang.Override
+    public boolean getKPAMJCLNJIF() {
+      return kPAMJCLNJIF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -204,17 +224,20 @@ public final class WidgetReportReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk2700MFEHMLBNNAG_ != false) {
-        output.writeBool(5, unk2700MFEHMLBNNAG_);
+      if (iENCBHNGNDM_ != false) {
+        output.writeBool(2, iENCBHNGNDM_);
       }
-      if (isClearHint_ != false) {
-        output.writeBool(13, isClearHint_);
+      if (nEIOFMCDAKD_ != false) {
+        output.writeBool(3, nEIOFMCDAKD_);
       }
-      if (isClientCollect_ != false) {
-        output.writeBool(14, isClientCollect_);
+      if (kPAMJCLNJIF_ != false) {
+        output.writeBool(5, kPAMJCLNJIF_);
       }
       if (materialId_ != 0) {
-        output.writeUInt32(15, materialId_);
+        output.writeUInt32(11, materialId_);
+      }
+      if (weatherWizardShieldValue_ != 0) {
+        output.writeUInt32(14, weatherWizardShieldValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,21 +248,25 @@ public final class WidgetReportReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk2700MFEHMLBNNAG_ != false) {
+      if (iENCBHNGNDM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, unk2700MFEHMLBNNAG_);
+          .computeBoolSize(2, iENCBHNGNDM_);
       }
-      if (isClearHint_ != false) {
+      if (nEIOFMCDAKD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isClearHint_);
+          .computeBoolSize(3, nEIOFMCDAKD_);
       }
-      if (isClientCollect_ != false) {
+      if (kPAMJCLNJIF_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isClientCollect_);
+          .computeBoolSize(5, kPAMJCLNJIF_);
       }
       if (materialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, materialId_);
+          .computeUInt32Size(11, materialId_);
+      }
+      if (weatherWizardShieldValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, weatherWizardShieldValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,14 +283,16 @@ public final class WidgetReportReqOuterClass {
       }
       emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq other = (emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq) obj;
 
-      if (getUnk2700MFEHMLBNNAG()
-          != other.getUnk2700MFEHMLBNNAG()) return false;
-      if (getIsClientCollect()
-          != other.getIsClientCollect()) return false;
-      if (getIsClearHint()
-          != other.getIsClearHint()) return false;
+      if (getIENCBHNGNDM()
+          != other.getIENCBHNGNDM()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
+      if (getWeatherWizardShieldValue()
+          != other.getWeatherWizardShieldValue()) return false;
+      if (getNEIOFMCDAKD()
+          != other.getNEIOFMCDAKD()) return false;
+      if (getKPAMJCLNJIF()
+          != other.getKPAMJCLNJIF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,17 +304,19 @@ public final class WidgetReportReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UNK2700_MFEHMLBNNAG_FIELD_NUMBER;
+      hash = (37 * hash) + IENCBHNGNDM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUnk2700MFEHMLBNNAG());
-      hash = (37 * hash) + IS_CLIENT_COLLECT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsClientCollect());
-      hash = (37 * hash) + IS_CLEAR_HINT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsClearHint());
+          getIENCBHNGNDM());
       hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialId();
+      hash = (37 * hash) + WEATHER_WIZARD_SHIELD_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getWeatherWizardShieldValue();
+      hash = (37 * hash) + NEIOFMCDAKD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNEIOFMCDAKD());
+      hash = (37 * hash) + KPAMJCLNJIF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKPAMJCLNJIF());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -383,10 +414,8 @@ public final class WidgetReportReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4291
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 2271
+     * Obf: HLEILGAJMPD
      * </pre>
      *
      * Protobuf type {@code WidgetReportReq}
@@ -426,13 +455,15 @@ public final class WidgetReportReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unk2700MFEHMLBNNAG_ = false;
-
-        isClientCollect_ = false;
-
-        isClearHint_ = false;
+        iENCBHNGNDM_ = false;
 
         materialId_ = 0;
+
+        weatherWizardShieldValue_ = 0;
+
+        nEIOFMCDAKD_ = false;
+
+        kPAMJCLNJIF_ = false;
 
         return this;
       }
@@ -460,10 +491,11 @@ public final class WidgetReportReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq buildPartial() {
         emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq result = new emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq(this);
-        result.unk2700MFEHMLBNNAG_ = unk2700MFEHMLBNNAG_;
-        result.isClientCollect_ = isClientCollect_;
-        result.isClearHint_ = isClearHint_;
+        result.iENCBHNGNDM_ = iENCBHNGNDM_;
         result.materialId_ = materialId_;
+        result.weatherWizardShieldValue_ = weatherWizardShieldValue_;
+        result.nEIOFMCDAKD_ = nEIOFMCDAKD_;
+        result.kPAMJCLNJIF_ = kPAMJCLNJIF_;
         onBuilt();
         return result;
       }
@@ -512,17 +544,20 @@ public final class WidgetReportReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq other) {
         if (other == emu.grasscutter.net.proto.WidgetReportReqOuterClass.WidgetReportReq.getDefaultInstance()) return this;
-        if (other.getUnk2700MFEHMLBNNAG() != false) {
-          setUnk2700MFEHMLBNNAG(other.getUnk2700MFEHMLBNNAG());
-        }
-        if (other.getIsClientCollect() != false) {
-          setIsClientCollect(other.getIsClientCollect());
-        }
-        if (other.getIsClearHint() != false) {
-          setIsClearHint(other.getIsClearHint());
+        if (other.getIENCBHNGNDM() != false) {
+          setIENCBHNGNDM(other.getIENCBHNGNDM());
         }
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
+        }
+        if (other.getWeatherWizardShieldValue() != 0) {
+          setWeatherWizardShieldValue(other.getWeatherWizardShieldValue());
+        }
+        if (other.getNEIOFMCDAKD() != false) {
+          setNEIOFMCDAKD(other.getNEIOFMCDAKD());
+        }
+        if (other.getKPAMJCLNJIF() != false) {
+          setKPAMJCLNJIF(other.getKPAMJCLNJIF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -553,102 +588,40 @@ public final class WidgetReportReqOuterClass {
         return this;
       }
 
-      private boolean unk2700MFEHMLBNNAG_ ;
+      private boolean iENCBHNGNDM_ ;
       /**
-       * <code>bool Unk2700_MFEHMLBNNAG = 5;</code>
-       * @return The unk2700MFEHMLBNNAG.
+       * <code>bool IENCBHNGNDM = 2;</code>
+       * @return The iENCBHNGNDM.
        */
       @java.lang.Override
-      public boolean getUnk2700MFEHMLBNNAG() {
-        return unk2700MFEHMLBNNAG_;
+      public boolean getIENCBHNGNDM() {
+        return iENCBHNGNDM_;
       }
       /**
-       * <code>bool Unk2700_MFEHMLBNNAG = 5;</code>
-       * @param value The unk2700MFEHMLBNNAG to set.
+       * <code>bool IENCBHNGNDM = 2;</code>
+       * @param value The iENCBHNGNDM to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk2700MFEHMLBNNAG(boolean value) {
+      public Builder setIENCBHNGNDM(boolean value) {
         
-        unk2700MFEHMLBNNAG_ = value;
+        iENCBHNGNDM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool Unk2700_MFEHMLBNNAG = 5;</code>
+       * <code>bool IENCBHNGNDM = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk2700MFEHMLBNNAG() {
+      public Builder clearIENCBHNGNDM() {
         
-        unk2700MFEHMLBNNAG_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isClientCollect_ ;
-      /**
-       * <code>bool is_client_collect = 14;</code>
-       * @return The isClientCollect.
-       */
-      @java.lang.Override
-      public boolean getIsClientCollect() {
-        return isClientCollect_;
-      }
-      /**
-       * <code>bool is_client_collect = 14;</code>
-       * @param value The isClientCollect to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsClientCollect(boolean value) {
-        
-        isClientCollect_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_client_collect = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsClientCollect() {
-        
-        isClientCollect_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isClearHint_ ;
-      /**
-       * <code>bool is_clear_hint = 13;</code>
-       * @return The isClearHint.
-       */
-      @java.lang.Override
-      public boolean getIsClearHint() {
-        return isClearHint_;
-      }
-      /**
-       * <code>bool is_clear_hint = 13;</code>
-       * @param value The isClearHint to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsClearHint(boolean value) {
-        
-        isClearHint_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_clear_hint = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsClearHint() {
-        
-        isClearHint_ = false;
+        iENCBHNGNDM_ = false;
         onChanged();
         return this;
       }
 
       private int materialId_ ;
       /**
-       * <code>uint32 material_id = 15;</code>
+       * <code>uint32 material_id = 11;</code>
        * @return The materialId.
        */
       @java.lang.Override
@@ -656,7 +629,7 @@ public final class WidgetReportReqOuterClass {
         return materialId_;
       }
       /**
-       * <code>uint32 material_id = 15;</code>
+       * <code>uint32 material_id = 11;</code>
        * @param value The materialId to set.
        * @return This builder for chaining.
        */
@@ -667,12 +640,105 @@ public final class WidgetReportReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 material_id = 15;</code>
+       * <code>uint32 material_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
         
         materialId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int weatherWizardShieldValue_ ;
+      /**
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
+       * @return The weatherWizardShieldValue.
+       */
+      @java.lang.Override
+      public int getWeatherWizardShieldValue() {
+        return weatherWizardShieldValue_;
+      }
+      /**
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
+       * @param value The weatherWizardShieldValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWeatherWizardShieldValue(int value) {
+        
+        weatherWizardShieldValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 weather_wizard_shield_value = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWeatherWizardShieldValue() {
+        
+        weatherWizardShieldValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean nEIOFMCDAKD_ ;
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @return The nEIOFMCDAKD.
+       */
+      @java.lang.Override
+      public boolean getNEIOFMCDAKD() {
+        return nEIOFMCDAKD_;
+      }
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @param value The nEIOFMCDAKD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNEIOFMCDAKD(boolean value) {
+        
+        nEIOFMCDAKD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool NEIOFMCDAKD = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNEIOFMCDAKD() {
+        
+        nEIOFMCDAKD_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean kPAMJCLNJIF_ ;
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @return The kPAMJCLNJIF.
+       */
+      @java.lang.Override
+      public boolean getKPAMJCLNJIF() {
+        return kPAMJCLNJIF_;
+      }
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @param value The kPAMJCLNJIF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPAMJCLNJIF(boolean value) {
+        
+        kPAMJCLNJIF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool KPAMJCLNJIF = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPAMJCLNJIF() {
+        
+        kPAMJCLNJIF_ = false;
         onChanged();
         return this;
       }
@@ -743,11 +809,12 @@ public final class WidgetReportReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025WidgetReportReq.proto\"u\n\017WidgetReportR" +
-      "eq\022\033\n\023Unk2700_MFEHMLBNNAG\030\005 \001(\010\022\031\n\021is_cl" +
-      "ient_collect\030\016 \001(\010\022\025\n\ris_clear_hint\030\r \001(" +
-      "\010\022\023\n\013material_id\030\017 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\n\025WidgetReportReq.proto\"\212\001\n\017WidgetReport" +
+      "Req\022\023\n\013IENCBHNGNDM\030\002 \001(\010\022\023\n\013material_id\030" +
+      "\013 \001(\r\022#\n\033weather_wizard_shield_value\030\016 \001" +
+      "(\r\022\023\n\013NEIOFMCDAKD\030\003 \001(\010\022\023\n\013KPAMJCLNJIF\030\005" +
+      " \001(\010B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -758,7 +825,7 @@ public final class WidgetReportReqOuterClass {
     internal_static_WidgetReportReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WidgetReportReq_descriptor,
-        new java.lang.String[] { "Unk2700MFEHMLBNNAG", "IsClientCollect", "IsClearHint", "MaterialId", });
+        new java.lang.String[] { "IENCBHNGNDM", "MaterialId", "WeatherWizardShieldValue", "NEIOFMCDAKD", "KPAMJCLNJIF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

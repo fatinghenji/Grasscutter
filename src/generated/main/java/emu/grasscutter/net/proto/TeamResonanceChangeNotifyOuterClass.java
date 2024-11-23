@@ -44,10 +44,8 @@ public final class TeamResonanceChangeNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1082
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 23566
+   * Obf: GPHMDAHPNLK
    * </pre>
    *
    * Protobuf type {@code TeamResonanceChangeNotify}
@@ -339,10 +337,8 @@ public final class TeamResonanceChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1082
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 23566
+     * Obf: GPHMDAHPNLK
      * </pre>
      *
      * Protobuf type {@code TeamResonanceChangeNotify}

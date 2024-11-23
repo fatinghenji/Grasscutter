@@ -132,6 +132,10 @@ public final class MotionInfoOuterClass {
     long getIntervalVelocity();
   }
   /**
+   * <pre>
+   * Obf: LJEPKMPIOKJ
+   * </pre>
+   *
    * Protobuf type {@code MotionInfo}
    */
   public static final class MotionInfo extends
@@ -758,6 +762,10 @@ public final class MotionInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: LJEPKMPIOKJ
+     * </pre>
+     *
      * Protobuf type {@code MotionInfo}
      */
     public static final class Builder extends
@@ -1951,8 +1959,8 @@ public final class MotionInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020MotionInfo.proto\032\021MotionState.proto\032\014V" +
-      "ector.proto\"\337\001\n\nMotionInfo\022\024\n\003pos\030\001 \001(\0132" +
+      "\n\020MotionInfo.proto\032\014Vector.proto\032\021Motion" +
+      "State.proto\"\337\001\n\nMotionInfo\022\024\n\003pos\030\001 \001(\0132" +
       "\007.Vector\022\024\n\003rot\030\002 \001(\0132\007.Vector\022\026\n\005speed\030" +
       "\003 \001(\0132\007.Vector\022\033\n\005state\030\004 \001(\0162\014.MotionSt" +
       "ate\022\027\n\006params\030\005 \003(\0132\007.Vector\022\030\n\007ref_pos\030" +
@@ -1963,8 +1971,8 @@ public final class MotionInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor(),
         });
     internal_static_MotionInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1972,8 +1980,8 @@ public final class MotionInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MotionInfo_descriptor,
         new java.lang.String[] { "Pos", "Rot", "Speed", "State", "Params", "RefPos", "RefId", "SceneTime", "IntervalVelocity", });
-    emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MotionStateOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

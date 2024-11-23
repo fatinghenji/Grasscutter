@@ -49,6 +49,10 @@ public final class MassivePropSyncInfoOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * Obf: HMEMJBACNJE
+   * </pre>
+   *
    * Protobuf type {@code MassivePropSyncInfo}
    */
   public static final class MassivePropSyncInfo extends
@@ -365,6 +369,10 @@ public final class MassivePropSyncInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: HMEMJBACNJE
+     * </pre>
+     *
      * Protobuf type {@code MassivePropSyncInfo}
      */
     public static final class Builder extends

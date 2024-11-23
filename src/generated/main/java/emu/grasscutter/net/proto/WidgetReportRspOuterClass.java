@@ -19,23 +19,21 @@ public final class WidgetReportRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 material_id = 4;</code>
+     * <code>uint32 material_id = 5;</code>
      * @return The materialId.
      */
     int getMaterialId();
   }
   /**
    * <pre>
-   * CmdId: 4292
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 27403
+   * Obf: FGIPDBHBOPH
    * </pre>
    *
    * Protobuf type {@code WidgetReportRsp}
@@ -82,14 +80,14 @@ public final class WidgetReportRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 16: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              materialId_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,10 +122,10 @@ public final class WidgetReportRspOuterClass {
               emu.grasscutter.net.proto.WidgetReportRspOuterClass.WidgetReportRsp.class, emu.grasscutter.net.proto.WidgetReportRspOuterClass.WidgetReportRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -135,10 +133,10 @@ public final class WidgetReportRspOuterClass {
       return retcode_;
     }
 
-    public static final int MATERIAL_ID_FIELD_NUMBER = 4;
+    public static final int MATERIAL_ID_FIELD_NUMBER = 5;
     private int materialId_;
     /**
-     * <code>uint32 material_id = 4;</code>
+     * <code>uint32 material_id = 5;</code>
      * @return The materialId.
      */
     @java.lang.Override
@@ -160,11 +158,11 @@ public final class WidgetReportRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (materialId_ != 0) {
-        output.writeUInt32(4, materialId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (materialId_ != 0) {
+        output.writeUInt32(5, materialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +173,13 @@ public final class WidgetReportRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (materialId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, materialId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (materialId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, materialId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +312,8 @@ public final class WidgetReportRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4292
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 27403
+     * Obf: FGIPDBHBOPH
      * </pre>
      *
      * Protobuf type {@code WidgetReportRsp}
@@ -474,7 +470,7 @@ public final class WidgetReportRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,7 +478,7 @@ public final class WidgetReportRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -493,7 +489,7 @@ public final class WidgetReportRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -505,7 +501,7 @@ public final class WidgetReportRspOuterClass {
 
       private int materialId_ ;
       /**
-       * <code>uint32 material_id = 4;</code>
+       * <code>uint32 material_id = 5;</code>
        * @return The materialId.
        */
       @java.lang.Override
@@ -513,7 +509,7 @@ public final class WidgetReportRspOuterClass {
         return materialId_;
       }
       /**
-       * <code>uint32 material_id = 4;</code>
+       * <code>uint32 material_id = 5;</code>
        * @param value The materialId to set.
        * @return This builder for chaining.
        */
@@ -524,7 +520,7 @@ public final class WidgetReportRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 material_id = 4;</code>
+       * <code>uint32 material_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
@@ -601,7 +597,7 @@ public final class WidgetReportRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025WidgetReportRsp.proto\"7\n\017WidgetReportR" +
-      "sp\022\017\n\007retcode\030\016 \001(\005\022\023\n\013material_id\030\004 \001(\r" +
+      "sp\022\017\n\007retcode\030\002 \001(\005\022\023\n\013material_id\030\005 \001(\r" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

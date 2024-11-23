@@ -1,37 +1,25 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import lombok.AccessLevel;
+import emu.grasscutter.data.*;
+import java.util.*;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-@ResourceType(name = "ChapterExcelConfigData.json")
 @Getter
-@Setter
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@ResourceType(name = "ChapterExcelConfigData.json")
 public class ChapterData extends GameResource {
-    int id;
-    int beginQuestId;
-    int endQuestId;
-    int needPlayerLevel;
+    @Getter private static final Map<Integer, ChapterData> beginQuestChapterMap = new HashMap<>();
+    @Getter private static final Map<Integer, ChapterData> endQuestChapterMap = new HashMap<>();
 
-    public static final Map<Integer, ChapterData> beginQuestChapterMap = new HashMap<>();
-    public static final Map<Integer, ChapterData> endQuestChapterMap = new HashMap<>();
+    @Getter(onMethod_ = @Override)
+    private int id;
 
-    @Override
-    public int getId() {
-        return this.id;
-    }
+    private int beginQuestId;
+    private int endQuestId;
+    private int needPlayerLevel;
 
     @Override
     public void onLoad() {
         beginQuestChapterMap.put(beginQuestId, this);
-        beginQuestChapterMap.put(endQuestId, this);
+        endQuestChapterMap.put(endQuestId, this);
     }
 }

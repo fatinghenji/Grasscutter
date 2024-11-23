@@ -31,6 +31,10 @@ public final class ItemParamOuterClass {
     int getCount();
   }
   /**
+   * <pre>
+   * Obf: GKCILFACLDH
+   * </pre>
+   *
    * Protobuf type {@code ItemParam}
    */
   public static final class ItemParam extends
@@ -306,6 +310,10 @@ public final class ItemParamOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: GKCILFACLDH
+     * </pre>
+     *
      * Protobuf type {@code ItemParam}
      */
     public static final class Builder extends

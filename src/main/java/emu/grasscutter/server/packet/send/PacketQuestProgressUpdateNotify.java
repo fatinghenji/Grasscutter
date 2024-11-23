@@ -1,9 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.QuestProgressUpdateNotifyOuterClass.QuestProgressUpdateNotify;
 
 public class PacketQuestProgressUpdateNotify extends BasePacket {
@@ -11,7 +9,8 @@ public class PacketQuestProgressUpdateNotify extends BasePacket {
     public PacketQuestProgressUpdateNotify(GameQuest quest) {
         super(PacketOpcodes.QuestProgressUpdateNotify);
 
-        QuestProgressUpdateNotify.Builder proto = QuestProgressUpdateNotify.newBuilder().setQuestId(quest.getSubQuestId());
+        QuestProgressUpdateNotify.Builder proto =
+                QuestProgressUpdateNotify.newBuilder().setQuestId(quest.getSubQuestId());
 
         if (quest.getFinishProgressList() != null) {
             for (int i : quest.getFinishProgressList()) {

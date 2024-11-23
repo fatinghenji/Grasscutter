@@ -19,23 +19,21 @@ public final class PostEnterSceneRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 enter_scene_token = 12;</code>
+     * <code>uint32 enter_scene_token = 9;</code>
      * @return The enterSceneToken.
      */
     int getEnterSceneToken();
   }
   /**
    * <pre>
-   * CmdId: 3184
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 7880
+   * Obf: AAGPOLGIIGK
    * </pre>
    *
    * Protobuf type {@code PostEnterSceneRsp}
@@ -82,14 +80,14 @@ public final class PostEnterSceneRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
+            case 72: {
 
               enterSceneToken_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -124,10 +122,10 @@ public final class PostEnterSceneRspOuterClass {
               emu.grasscutter.net.proto.PostEnterSceneRspOuterClass.PostEnterSceneRsp.class, emu.grasscutter.net.proto.PostEnterSceneRspOuterClass.PostEnterSceneRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -135,10 +133,10 @@ public final class PostEnterSceneRspOuterClass {
       return retcode_;
     }
 
-    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 12;
+    public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 9;
     private int enterSceneToken_;
     /**
-     * <code>uint32 enter_scene_token = 12;</code>
+     * <code>uint32 enter_scene_token = 9;</code>
      * @return The enterSceneToken.
      */
     @java.lang.Override
@@ -160,11 +158,11 @@ public final class PostEnterSceneRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
       if (enterSceneToken_ != 0) {
-        output.writeUInt32(12, enterSceneToken_);
+        output.writeUInt32(9, enterSceneToken_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +173,13 @@ public final class PostEnterSceneRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
       if (enterSceneToken_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, enterSceneToken_);
+          .computeUInt32Size(9, enterSceneToken_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +312,8 @@ public final class PostEnterSceneRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3184
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 7880
+     * Obf: AAGPOLGIIGK
      * </pre>
      *
      * Protobuf type {@code PostEnterSceneRsp}
@@ -474,7 +470,7 @@ public final class PostEnterSceneRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -482,7 +478,7 @@ public final class PostEnterSceneRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -493,7 +489,7 @@ public final class PostEnterSceneRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -505,7 +501,7 @@ public final class PostEnterSceneRspOuterClass {
 
       private int enterSceneToken_ ;
       /**
-       * <code>uint32 enter_scene_token = 12;</code>
+       * <code>uint32 enter_scene_token = 9;</code>
        * @return The enterSceneToken.
        */
       @java.lang.Override
@@ -513,7 +509,7 @@ public final class PostEnterSceneRspOuterClass {
         return enterSceneToken_;
       }
       /**
-       * <code>uint32 enter_scene_token = 12;</code>
+       * <code>uint32 enter_scene_token = 9;</code>
        * @param value The enterSceneToken to set.
        * @return This builder for chaining.
        */
@@ -524,7 +520,7 @@ public final class PostEnterSceneRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 enter_scene_token = 12;</code>
+       * <code>uint32 enter_scene_token = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnterSceneToken() {
@@ -601,8 +597,8 @@ public final class PostEnterSceneRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027PostEnterSceneRsp.proto\"?\n\021PostEnterSc" +
-      "eneRsp\022\017\n\007retcode\030\004 \001(\005\022\031\n\021enter_scene_t" +
-      "oken\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "eneRsp\022\017\n\007retcode\030\017 \001(\005\022\031\n\021enter_scene_t" +
+      "oken\030\t \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

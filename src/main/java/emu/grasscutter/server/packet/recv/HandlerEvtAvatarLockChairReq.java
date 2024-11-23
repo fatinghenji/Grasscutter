@@ -1,9 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq;
 import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.server.game.GameSession;
@@ -19,7 +17,7 @@ public class HandlerEvtAvatarLockChairReq extends PacketHandler {
 
         EntityAvatar entityAvatar = session.getPlayer().getTeamManager().getCurrentAvatarEntity();
 
-        session.send(new PacketEvtAvatarLockChairRsp(head.getClientSequenceId(), entityAvatar, lockChairReq));
+        session.send(
+                new PacketEvtAvatarLockChairRsp(head.getClientSequenceId(), entityAvatar, lockChairReq));
     }
-
 }

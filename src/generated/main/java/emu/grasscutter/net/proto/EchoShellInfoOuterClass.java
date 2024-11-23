@@ -25,6 +25,10 @@ public final class EchoShellInfoOuterClass {
     int getShellId();
   }
   /**
+   * <pre>
+   * Obf: KCHCJMNANCP
+   * </pre>
+   *
    * Protobuf type {@code EchoShellInfo}
    */
   public static final class EchoShellInfo extends
@@ -273,6 +277,10 @@ public final class EchoShellInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: KCHCJMNANCP
+     * </pre>
+     *
      * Protobuf type {@code EchoShellInfo}
      */
     public static final class Builder extends

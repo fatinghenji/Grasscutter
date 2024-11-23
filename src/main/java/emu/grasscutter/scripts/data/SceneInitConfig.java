@@ -1,12 +1,12 @@
 package emu.grasscutter.scripts.data;
 
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
 @Setter
-public class SceneInitConfig {
-	public int suite;
-	public int end_suite;
-	public int rand_suite;
+public final class SceneInitConfig {
+    public int suite;
+    public int end_suite;
+    public int io_type;
+    public boolean rand_suite;
 }

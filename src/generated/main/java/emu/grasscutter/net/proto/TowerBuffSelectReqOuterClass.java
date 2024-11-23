@@ -26,10 +26,8 @@ public final class TowerBuffSelectReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2448
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 8694
+   * Obf: ALCNOJCIJGE
    * </pre>
    *
    * Protobuf type {@code TowerBuffSelectReq}
@@ -281,10 +279,8 @@ public final class TowerBuffSelectReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2448
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 8694
+     * Obf: ALCNOJCIJGE
      * </pre>
      *
      * Protobuf type {@code TowerBuffSelectReq}

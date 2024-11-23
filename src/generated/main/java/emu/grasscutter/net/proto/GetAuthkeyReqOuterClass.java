@@ -19,35 +19,33 @@ public final class GetAuthkeyReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string auth_appid = 14;</code>
+     * <code>uint32 PGANJHDNINM = 7;</code>
+     * @return The pGANJHDNINM.
+     */
+    int getPGANJHDNINM();
+
+    /**
+     * <code>string auth_appid = 2;</code>
      * @return The authAppid.
      */
     java.lang.String getAuthAppid();
     /**
-     * <code>string auth_appid = 14;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The bytes for authAppid.
      */
     com.google.protobuf.ByteString
         getAuthAppidBytes();
 
     /**
-     * <code>uint32 sign_type = 7;</code>
-     * @return The signType.
+     * <code>uint32 BIGHJAIBJJK = 14;</code>
+     * @return The bIGHJAIBJJK.
      */
-    int getSignType();
-
-    /**
-     * <code>uint32 authkey_ver = 13;</code>
-     * @return The authkeyVer.
-     */
-    int getAuthkeyVer();
+    int getBIGHJAIBJJK();
   }
   /**
    * <pre>
-   * CmdId: 1490
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 27875
+   * Obf: DCPMJKGKCGE
    * </pre>
    *
    * Protobuf type {@code GetAuthkeyReq}
@@ -95,20 +93,20 @@ public final class GetAuthkeyReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              signType_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              authkeyVer_ = input.readUInt32();
-              break;
-            }
-            case 114: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               authAppid_ = s;
+              break;
+            }
+            case 56: {
+
+              pGANJHDNINM_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              bIGHJAIBJJK_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,10 +141,21 @@ public final class GetAuthkeyReqOuterClass {
               emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.class, emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.Builder.class);
     }
 
-    public static final int AUTH_APPID_FIELD_NUMBER = 14;
+    public static final int PGANJHDNINM_FIELD_NUMBER = 7;
+    private int pGANJHDNINM_;
+    /**
+     * <code>uint32 PGANJHDNINM = 7;</code>
+     * @return The pGANJHDNINM.
+     */
+    @java.lang.Override
+    public int getPGANJHDNINM() {
+      return pGANJHDNINM_;
+    }
+
+    public static final int AUTH_APPID_FIELD_NUMBER = 2;
     private volatile java.lang.Object authAppid_;
     /**
-     * <code>string auth_appid = 14;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The authAppid.
      */
     @java.lang.Override
@@ -163,7 +172,7 @@ public final class GetAuthkeyReqOuterClass {
       }
     }
     /**
-     * <code>string auth_appid = 14;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The bytes for authAppid.
      */
     @java.lang.Override
@@ -181,26 +190,15 @@ public final class GetAuthkeyReqOuterClass {
       }
     }
 
-    public static final int SIGN_TYPE_FIELD_NUMBER = 7;
-    private int signType_;
+    public static final int BIGHJAIBJJK_FIELD_NUMBER = 14;
+    private int bIGHJAIBJJK_;
     /**
-     * <code>uint32 sign_type = 7;</code>
-     * @return The signType.
+     * <code>uint32 BIGHJAIBJJK = 14;</code>
+     * @return The bIGHJAIBJJK.
      */
     @java.lang.Override
-    public int getSignType() {
-      return signType_;
-    }
-
-    public static final int AUTHKEY_VER_FIELD_NUMBER = 13;
-    private int authkeyVer_;
-    /**
-     * <code>uint32 authkey_ver = 13;</code>
-     * @return The authkeyVer.
-     */
-    @java.lang.Override
-    public int getAuthkeyVer() {
-      return authkeyVer_;
+    public int getBIGHJAIBJJK() {
+      return bIGHJAIBJJK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -217,14 +215,14 @@ public final class GetAuthkeyReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (signType_ != 0) {
-        output.writeUInt32(7, signType_);
-      }
-      if (authkeyVer_ != 0) {
-        output.writeUInt32(13, authkeyVer_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, authAppid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, authAppid_);
+      }
+      if (pGANJHDNINM_ != 0) {
+        output.writeUInt32(7, pGANJHDNINM_);
+      }
+      if (bIGHJAIBJJK_ != 0) {
+        output.writeUInt32(14, bIGHJAIBJJK_);
       }
       unknownFields.writeTo(output);
     }
@@ -235,16 +233,16 @@ public final class GetAuthkeyReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (signType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, signType_);
-      }
-      if (authkeyVer_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, authkeyVer_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, authAppid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, authAppid_);
+      }
+      if (pGANJHDNINM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, pGANJHDNINM_);
+      }
+      if (bIGHJAIBJJK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, bIGHJAIBJJK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -261,12 +259,12 @@ public final class GetAuthkeyReqOuterClass {
       }
       emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq other = (emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq) obj;
 
+      if (getPGANJHDNINM()
+          != other.getPGANJHDNINM()) return false;
       if (!getAuthAppid()
           .equals(other.getAuthAppid())) return false;
-      if (getSignType()
-          != other.getSignType()) return false;
-      if (getAuthkeyVer()
-          != other.getAuthkeyVer()) return false;
+      if (getBIGHJAIBJJK()
+          != other.getBIGHJAIBJJK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -278,12 +276,12 @@ public final class GetAuthkeyReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PGANJHDNINM_FIELD_NUMBER;
+      hash = (53 * hash) + getPGANJHDNINM();
       hash = (37 * hash) + AUTH_APPID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthAppid().hashCode();
-      hash = (37 * hash) + SIGN_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getSignType();
-      hash = (37 * hash) + AUTHKEY_VER_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthkeyVer();
+      hash = (37 * hash) + BIGHJAIBJJK_FIELD_NUMBER;
+      hash = (53 * hash) + getBIGHJAIBJJK();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -381,10 +379,8 @@ public final class GetAuthkeyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1490
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 27875
+     * Obf: DCPMJKGKCGE
      * </pre>
      *
      * Protobuf type {@code GetAuthkeyReq}
@@ -424,11 +420,11 @@ public final class GetAuthkeyReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        pGANJHDNINM_ = 0;
+
         authAppid_ = "";
 
-        signType_ = 0;
-
-        authkeyVer_ = 0;
+        bIGHJAIBJJK_ = 0;
 
         return this;
       }
@@ -456,9 +452,9 @@ public final class GetAuthkeyReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq buildPartial() {
         emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq result = new emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq(this);
+        result.pGANJHDNINM_ = pGANJHDNINM_;
         result.authAppid_ = authAppid_;
-        result.signType_ = signType_;
-        result.authkeyVer_ = authkeyVer_;
+        result.bIGHJAIBJJK_ = bIGHJAIBJJK_;
         onBuilt();
         return result;
       }
@@ -507,15 +503,15 @@ public final class GetAuthkeyReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq other) {
         if (other == emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.getDefaultInstance()) return this;
+        if (other.getPGANJHDNINM() != 0) {
+          setPGANJHDNINM(other.getPGANJHDNINM());
+        }
         if (!other.getAuthAppid().isEmpty()) {
           authAppid_ = other.authAppid_;
           onChanged();
         }
-        if (other.getSignType() != 0) {
-          setSignType(other.getSignType());
-        }
-        if (other.getAuthkeyVer() != 0) {
-          setAuthkeyVer(other.getAuthkeyVer());
+        if (other.getBIGHJAIBJJK() != 0) {
+          setBIGHJAIBJJK(other.getBIGHJAIBJJK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,9 +542,40 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
 
+      private int pGANJHDNINM_ ;
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @return The pGANJHDNINM.
+       */
+      @java.lang.Override
+      public int getPGANJHDNINM() {
+        return pGANJHDNINM_;
+      }
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @param value The pGANJHDNINM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPGANJHDNINM(int value) {
+        
+        pGANJHDNINM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPGANJHDNINM() {
+        
+        pGANJHDNINM_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object authAppid_ = "";
       /**
-       * <code>string auth_appid = 14;</code>
+       * <code>string auth_appid = 2;</code>
        * @return The authAppid.
        */
       public java.lang.String getAuthAppid() {
@@ -564,7 +591,7 @@ public final class GetAuthkeyReqOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 14;</code>
+       * <code>string auth_appid = 2;</code>
        * @return The bytes for authAppid.
        */
       public com.google.protobuf.ByteString
@@ -581,7 +608,7 @@ public final class GetAuthkeyReqOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 14;</code>
+       * <code>string auth_appid = 2;</code>
        * @param value The authAppid to set.
        * @return This builder for chaining.
        */
@@ -596,7 +623,7 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 14;</code>
+       * <code>string auth_appid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthAppid() {
@@ -606,7 +633,7 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 14;</code>
+       * <code>string auth_appid = 2;</code>
        * @param value The bytes for authAppid to set.
        * @return This builder for chaining.
        */
@@ -622,64 +649,33 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
 
-      private int signType_ ;
+      private int bIGHJAIBJJK_ ;
       /**
-       * <code>uint32 sign_type = 7;</code>
-       * @return The signType.
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
+       * @return The bIGHJAIBJJK.
        */
       @java.lang.Override
-      public int getSignType() {
-        return signType_;
+      public int getBIGHJAIBJJK() {
+        return bIGHJAIBJJK_;
       }
       /**
-       * <code>uint32 sign_type = 7;</code>
-       * @param value The signType to set.
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
+       * @param value The bIGHJAIBJJK to set.
        * @return This builder for chaining.
        */
-      public Builder setSignType(int value) {
+      public Builder setBIGHJAIBJJK(int value) {
         
-        signType_ = value;
+        bIGHJAIBJJK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 sign_type = 7;</code>
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSignType() {
+      public Builder clearBIGHJAIBJJK() {
         
-        signType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int authkeyVer_ ;
-      /**
-       * <code>uint32 authkey_ver = 13;</code>
-       * @return The authkeyVer.
-       */
-      @java.lang.Override
-      public int getAuthkeyVer() {
-        return authkeyVer_;
-      }
-      /**
-       * <code>uint32 authkey_ver = 13;</code>
-       * @param value The authkeyVer to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthkeyVer(int value) {
-        
-        authkeyVer_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 authkey_ver = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAuthkeyVer() {
-        
-        authkeyVer_ = 0;
+        bIGHJAIBJJK_ = 0;
         onChanged();
         return this;
       }
@@ -750,10 +746,10 @@ public final class GetAuthkeyReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023GetAuthkeyReq.proto\"K\n\rGetAuthkeyReq\022\022" +
-      "\n\nauth_appid\030\016 \001(\t\022\021\n\tsign_type\030\007 \001(\r\022\023\n" +
-      "\013authkey_ver\030\r \001(\rB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\n\023GetAuthkeyReq.proto\"M\n\rGetAuthkeyReq\022\023" +
+      "\n\013PGANJHDNINM\030\007 \001(\r\022\022\n\nauth_appid\030\002 \001(\t\022" +
+      "\023\n\013BIGHJAIBJJK\030\016 \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -764,7 +760,7 @@ public final class GetAuthkeyReqOuterClass {
     internal_static_GetAuthkeyReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAuthkeyReq_descriptor,
-        new java.lang.String[] { "AuthAppid", "SignType", "AuthkeyVer", });
+        new java.lang.String[] { "PGANJHDNINM", "AuthAppid", "BIGHJAIBJJK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

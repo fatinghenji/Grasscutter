@@ -15,6 +15,10 @@ public final class VehicleInteractTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: HHAEHDABPEB
+   * </pre>
+   *
    * Protobuf enum {@code VehicleInteractType}
    */
   public enum VehicleInteractType

@@ -31,6 +31,10 @@ public final class PlayerRTTInfoOuterClass {
     int getUid();
   }
   /**
+   * <pre>
+   * Obf: MCDPPKMOEJJ
+   * </pre>
+   *
    * Protobuf type {@code PlayerRTTInfo}
    */
   public static final class PlayerRTTInfo extends
@@ -306,6 +310,10 @@ public final class PlayerRTTInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: MCDPPKMOEJJ
+     * </pre>
+     *
      * Protobuf type {@code PlayerRTTInfo}
      */
     public static final class Builder extends

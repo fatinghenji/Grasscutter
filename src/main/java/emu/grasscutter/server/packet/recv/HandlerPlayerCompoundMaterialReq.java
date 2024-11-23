@@ -1,8 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
@@ -13,5 +11,4 @@ public class HandlerPlayerCompoundMaterialReq extends PacketHandler {
         var req = PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq.parseFrom(payload);
         session.getPlayer().getCookingCompoundManager().handlePlayerCompoundMaterialReq(req);
     }
-
 }

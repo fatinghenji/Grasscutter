@@ -26,10 +26,8 @@ public final class HomeUpdateArrangementInfoRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4757
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 28545
+   * Obf: MILPFBIHKIJ
    * </pre>
    *
    * Protobuf type {@code HomeUpdateArrangementInfoRsp}
@@ -281,10 +279,8 @@ public final class HomeUpdateArrangementInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4757
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 28545
+     * Obf: MILPFBIHKIJ
      * </pre>
      *
      * Protobuf type {@code HomeUpdateArrangementInfoRsp}

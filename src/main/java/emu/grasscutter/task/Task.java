@@ -1,8 +1,6 @@
 package emu.grasscutter.task;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
+import java.lang.annotation.*;
 
 /*
 * So what is cron expression?
@@ -25,8 +23,12 @@ For the rest of the wildcard characters, please Google them yourself
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Task {
     String taskName() default "NO_NAME";
+
     String taskCronExpression() default "0 0 0 0 0 ?";
+
     String triggerName() default "NO_NAME";
+
     boolean executeImmediatelyAfterReset() default false;
+
     boolean executeImmediately() default false;
 }

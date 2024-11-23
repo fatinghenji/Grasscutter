@@ -1,22 +1,22 @@
 package emu.grasscutter.game.mail;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.Transient;
+import static emu.grasscutter.net.proto.MailItemOuterClass.MailItem.newBuilder;
+
+import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-
+import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.EquipParamOuterClass.EquipParam;
+import emu.grasscutter.net.proto.MailCollectStateOuterClass.MailCollectState;
+import emu.grasscutter.net.proto.MailTextContentOuterClass.MailTextContent;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import org.bson.types.ObjectId;
 
 @Entity(value = "mail", useDiscriminator = false)
-public class Mail {
-	@Id private ObjectId id;
-	@Indexed private int ownerUid;
+public final class Mail {
+    @Id private ObjectId id;
+    @Indexed private int ownerUid;
     public MailContent mailContent;
     public List<MailItem> itemList;
     public long sendTime;
@@ -28,7 +28,11 @@ public class Mail {
     @Transient private boolean shouldDelete;
 
     public Mail() {
-        this(new MailContent(), new ArrayList<MailItem>(), (int) Instant.now().getEpochSecond() + 604800); // TODO: add expire time to send mail command
+        this(
+                new MailContent(),
+                new ArrayList<MailItem>(),
+                (int) Instant.now().getEpochSecond()
+                        + 604800); // TODO: add expire time to send mail command
     }
 
     public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime) {
@@ -39,7 +43,12 @@ public class Mail {
         this(mailContent, itemList, expireTime, importance, 1);
     }
 
-    public Mail(MailContent mailContent, List<MailItem> itemList, long expireTime, int importance, int state) {
+    public Mail(
+            MailContent mailContent,
+            List<MailItem> itemList,
+            long expireTime,
+            int importance,
+            int state) {
         this.mailContent = mailContent;
         this.itemList = itemList;
         this.sendTime = (int) Instant.now().getEpochSecond();
@@ -51,18 +60,32 @@ public class Mail {
     }
 
     public ObjectId getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public int getOwnerUid() {
-		return ownerUid;
-	}
+    public int getOwnerUid() {
+        return ownerUid;
+    }
 
-	public void setOwnerUid(int ownerUid) {
-		this.ownerUid = ownerUid;
-	}
+    public void setOwnerUid(int ownerUid) {
+        this.ownerUid = ownerUid;
+    }
 
-	@Entity
+    public MailDataOuterClass.MailData toProto(Player player) {
+        return MailDataOuterClass.MailData.newBuilder()
+                .setMailId(player.getMailId(this))
+                .setMailTextContent(this.mailContent.toProto())
+                .addAllItemList(this.itemList.stream().map(MailItem::toProto).toList())
+                .setSendTime((int) this.sendTime)
+                .setExpireTime((int) this.expireTime)
+                .setImportance(this.importance)
+                .setIsRead(this.isRead)
+                .setIsAttachmentGot(this.isAttachmentGot)
+                .setCollectState(MailCollectState.MAIL_COLLECT_STATE_NOT_COLLECTIBLE)
+                .build();
+    }
+
+    @Entity
     public static class MailContent {
         public String title;
         public String content;
@@ -87,6 +110,14 @@ public class Mail {
             this.content = content;
             this.sender = sender;
         }
+
+        public MailTextContent toProto() {
+            return MailTextContent.newBuilder()
+                    .setTitle(this.title)
+                    .setContent(this.content)
+                    .setSender(this.sender)
+                    .build();
+        }
     }
 
     @Entity
@@ -105,20 +136,34 @@ public class Mail {
             this(itemId, 1);
         }
 
-        public MailItem(int itemId, int itemCount) { this(itemId, itemCount, 1); }
+        public MailItem(int itemId, int itemCount) {
+            this(itemId, itemCount, 1);
+        }
 
         public MailItem(int itemId, int itemCount, int itemLevel) {
             this.itemId = itemId;
             this.itemCount = itemCount;
             this.itemLevel = itemLevel;
         }
+
+        public MailItemOuterClass.MailItem toProto() {
+            return newBuilder()
+                    .setEquipParam(
+                            EquipParam.newBuilder()
+                                    .setItemId(this.itemId)
+                                    .setItemNum(this.itemCount)
+                                    .setItemLevel(this.itemLevel)
+                                    .setPromoteLevel(0) // mock
+                                    .build())
+                    .build();
+        }
     }
 
-	public void save() {
-		if (this.expireTime * 1000 < System.currentTimeMillis()) {
-			DatabaseHelper.deleteMail(this);
-		} else {
-			DatabaseHelper.saveMail(this);
-		}
-	}
+    public void save() {
+        if (this.expireTime * 1000 < System.currentTimeMillis()) {
+            DatabaseHelper.deleteMail(this);
+        } else {
+            DatabaseHelper.saveMail(this);
+        }
+    }
 }

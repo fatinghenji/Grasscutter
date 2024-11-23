@@ -31,6 +31,10 @@ public final class FightPropPairOuterClass {
     float getPropValue();
   }
   /**
+   * <pre>
+   * Obf: DKENFABIHAJ
+   * </pre>
+   *
    * Protobuf type {@code FightPropPair}
    */
   public static final class FightPropPair extends
@@ -308,6 +312,10 @@ public final class FightPropPairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: DKENFABIHAJ
+     * </pre>
+     *
      * Protobuf type {@code FightPropPair}
      */
     public static final class Builder extends

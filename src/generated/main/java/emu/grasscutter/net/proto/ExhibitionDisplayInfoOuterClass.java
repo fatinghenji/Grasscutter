@@ -37,6 +37,10 @@ public final class ExhibitionDisplayInfoOuterClass {
     int getDetailParam();
   }
   /**
+   * <pre>
+   * Obf: MCIHMDBLAPP
+   * </pre>
+   *
    * Protobuf type {@code ExhibitionDisplayInfo}
    */
   public static final class ExhibitionDisplayInfo extends
@@ -339,6 +343,10 @@ public final class ExhibitionDisplayInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: MCIHMDBLAPP
+     * </pre>
+     *
      * Protobuf type {@code ExhibitionDisplayInfo}
      */
     public static final class Builder extends

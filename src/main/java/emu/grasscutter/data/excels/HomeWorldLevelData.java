@@ -1,12 +1,9 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.experimental.FieldDefaults;
-
+import emu.grasscutter.data.*;
 import java.util.List;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -28,10 +25,5 @@ public class HomeWorldLevelData extends GameResource {
     @Override
     public int getId() {
         return level;
-    }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
     }
 }

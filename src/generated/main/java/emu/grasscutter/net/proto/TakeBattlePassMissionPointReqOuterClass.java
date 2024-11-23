@@ -37,10 +37,8 @@ public final class TakeBattlePassMissionPointReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2629
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 20580
+   * Obf: GPPAPCLMIEA
    * </pre>
    *
    * Protobuf type {@code TakeBattlePassMissionPointReq}
@@ -347,10 +345,8 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2629
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 20580
+     * Obf: GPPAPCLMIEA
      * </pre>
      *
      * Protobuf type {@code TakeBattlePassMissionPointReq}

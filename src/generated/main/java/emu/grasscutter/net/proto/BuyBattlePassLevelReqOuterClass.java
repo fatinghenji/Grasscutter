@@ -26,10 +26,8 @@ public final class BuyBattlePassLevelReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2647
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 20824
+   * Obf: FJCCKDGCFBC
    * </pre>
    *
    * Protobuf type {@code BuyBattlePassLevelReq}
@@ -281,10 +279,8 @@ public final class BuyBattlePassLevelReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2647
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 20824
+     * Obf: FJCCKDGCFBC
      * </pre>
      *
      * Protobuf type {@code BuyBattlePassLevelReq}

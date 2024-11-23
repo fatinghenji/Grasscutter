@@ -15,6 +15,10 @@ public final class MotionStateOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: KGHLDGDMFOB
+   * </pre>
+   *
    * Protobuf enum {@code MotionState}
    */
   public enum MotionState
@@ -236,17 +240,61 @@ public final class MotionStateOuterClass {
      */
     MOTION_STATE_FLY_FAST(53),
     /**
-     * <code>MOTION_STATE_NUM = 54;</code>
+     * <code>MOTION_STATE_AIM_MOVE = 54;</code>
      */
-    MOTION_STATE_NUM(54),
+    MOTION_STATE_AIM_MOVE(54),
     /**
-     * <code>MOTION_STATE_Unk2700_OOFNNHKLEFE = 55;</code>
+     * <code>MOTION_STATE_AIR_COMPENSATION = 55;</code>
      */
-    MOTION_STATE_Unk2700_OOFNNHKLEFE(55),
+    MOTION_STATE_AIR_COMPENSATION(55),
     /**
-     * <code>MOTION_STATE_Unk2700_KMIGLMEGNOK = 56;</code>
+     * <code>MOTION_STATE_SORUSH_NORMAL = 56;</code>
      */
-    MOTION_STATE_Unk2700_KMIGLMEGNOK(56),
+    MOTION_STATE_SORUSH_NORMAL(56),
+    /**
+     * <code>MOTION_STATE_ROLLER_COASTER = 57;</code>
+     */
+    MOTION_STATE_ROLLER_COASTER(57),
+    /**
+     * <code>MOTION_STATE_DIVE_IDLE = 58;</code>
+     */
+    MOTION_STATE_DIVE_IDLE(58),
+    /**
+     * <code>MOTION_STATE_DIVE_MOVE = 59;</code>
+     */
+    MOTION_STATE_DIVE_MOVE(59),
+    /**
+     * <code>MOTION_STATE_DIVE_DASH = 60;</code>
+     */
+    MOTION_STATE_DIVE_DASH(60),
+    /**
+     * <code>MOTION_STATE_DIVE_DOLPHINE = 61;</code>
+     */
+    MOTION_STATE_DIVE_DOLPHINE(61),
+    /**
+     * <code>MOTION_STATE_DEBUG = 62;</code>
+     */
+    MOTION_STATE_DEBUG(62),
+    /**
+     * <code>MOTION_STATE_OCEAN_CURRENT = 63;</code>
+     */
+    MOTION_STATE_OCEAN_CURRENT(63),
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_MOVE = 64;</code>
+     */
+    MOTION_STATE_DIVE_SWIM_MOVE(64),
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_IDLE = 65;</code>
+     */
+    MOTION_STATE_DIVE_SWIM_IDLE(65),
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_DASH = 66;</code>
+     */
+    MOTION_STATE_DIVE_SWIM_DASH(66),
+    /**
+     * <code>MOTION_STATE_NUM = 67;</code>
+     */
+    MOTION_STATE_NUM(67),
     UNRECOGNIZED(-1),
     ;
 
@@ -467,17 +515,61 @@ public final class MotionStateOuterClass {
      */
     public static final int MOTION_STATE_FLY_FAST_VALUE = 53;
     /**
-     * <code>MOTION_STATE_NUM = 54;</code>
+     * <code>MOTION_STATE_AIM_MOVE = 54;</code>
      */
-    public static final int MOTION_STATE_NUM_VALUE = 54;
+    public static final int MOTION_STATE_AIM_MOVE_VALUE = 54;
     /**
-     * <code>MOTION_STATE_Unk2700_OOFNNHKLEFE = 55;</code>
+     * <code>MOTION_STATE_AIR_COMPENSATION = 55;</code>
      */
-    public static final int MOTION_STATE_Unk2700_OOFNNHKLEFE_VALUE = 55;
+    public static final int MOTION_STATE_AIR_COMPENSATION_VALUE = 55;
     /**
-     * <code>MOTION_STATE_Unk2700_KMIGLMEGNOK = 56;</code>
+     * <code>MOTION_STATE_SORUSH_NORMAL = 56;</code>
      */
-    public static final int MOTION_STATE_Unk2700_KMIGLMEGNOK_VALUE = 56;
+    public static final int MOTION_STATE_SORUSH_NORMAL_VALUE = 56;
+    /**
+     * <code>MOTION_STATE_ROLLER_COASTER = 57;</code>
+     */
+    public static final int MOTION_STATE_ROLLER_COASTER_VALUE = 57;
+    /**
+     * <code>MOTION_STATE_DIVE_IDLE = 58;</code>
+     */
+    public static final int MOTION_STATE_DIVE_IDLE_VALUE = 58;
+    /**
+     * <code>MOTION_STATE_DIVE_MOVE = 59;</code>
+     */
+    public static final int MOTION_STATE_DIVE_MOVE_VALUE = 59;
+    /**
+     * <code>MOTION_STATE_DIVE_DASH = 60;</code>
+     */
+    public static final int MOTION_STATE_DIVE_DASH_VALUE = 60;
+    /**
+     * <code>MOTION_STATE_DIVE_DOLPHINE = 61;</code>
+     */
+    public static final int MOTION_STATE_DIVE_DOLPHINE_VALUE = 61;
+    /**
+     * <code>MOTION_STATE_DEBUG = 62;</code>
+     */
+    public static final int MOTION_STATE_DEBUG_VALUE = 62;
+    /**
+     * <code>MOTION_STATE_OCEAN_CURRENT = 63;</code>
+     */
+    public static final int MOTION_STATE_OCEAN_CURRENT_VALUE = 63;
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_MOVE = 64;</code>
+     */
+    public static final int MOTION_STATE_DIVE_SWIM_MOVE_VALUE = 64;
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_IDLE = 65;</code>
+     */
+    public static final int MOTION_STATE_DIVE_SWIM_IDLE_VALUE = 65;
+    /**
+     * <code>MOTION_STATE_DIVE_SWIM_DASH = 66;</code>
+     */
+    public static final int MOTION_STATE_DIVE_SWIM_DASH_VALUE = 66;
+    /**
+     * <code>MOTION_STATE_NUM = 67;</code>
+     */
+    public static final int MOTION_STATE_NUM_VALUE = 67;
 
 
     public final int getNumber() {
@@ -558,9 +650,20 @@ public final class MotionStateOuterClass {
         case 51: return MOTION_STATE_FLY_IDLE;
         case 52: return MOTION_STATE_FLY_SLOW;
         case 53: return MOTION_STATE_FLY_FAST;
-        case 54: return MOTION_STATE_NUM;
-        case 55: return MOTION_STATE_Unk2700_OOFNNHKLEFE;
-        case 56: return MOTION_STATE_Unk2700_KMIGLMEGNOK;
+        case 54: return MOTION_STATE_AIM_MOVE;
+        case 55: return MOTION_STATE_AIR_COMPENSATION;
+        case 56: return MOTION_STATE_SORUSH_NORMAL;
+        case 57: return MOTION_STATE_ROLLER_COASTER;
+        case 58: return MOTION_STATE_DIVE_IDLE;
+        case 59: return MOTION_STATE_DIVE_MOVE;
+        case 60: return MOTION_STATE_DIVE_DASH;
+        case 61: return MOTION_STATE_DIVE_DOLPHINE;
+        case 62: return MOTION_STATE_DEBUG;
+        case 63: return MOTION_STATE_OCEAN_CURRENT;
+        case 64: return MOTION_STATE_DIVE_SWIM_MOVE;
+        case 65: return MOTION_STATE_DIVE_SWIM_IDLE;
+        case 66: return MOTION_STATE_DIVE_SWIM_DASH;
+        case 67: return MOTION_STATE_NUM;
         default: return null;
       }
     }
@@ -626,7 +729,7 @@ public final class MotionStateOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MotionState.proto*\242\r\n\013MotionState\022\025\n\021M" +
+      "\n\021MotionState.proto*\344\017\n\013MotionState\022\025\n\021M" +
       "OTION_STATE_NONE\020\000\022\026\n\022MOTION_STATE_RESET" +
       "\020\001\022\030\n\024MOTION_STATE_STANDBY\020\002\022\035\n\031MOTION_S" +
       "TATE_STANDBY_MOVE\020\003\022\025\n\021MOTION_STATE_WALK" +
@@ -666,10 +769,18 @@ public final class MotionStateOuterClass {
       "_STATE_SKIFF_POWERED_DASH\0201\022 \n\034MOTION_ST" +
       "ATE_DESTROY_VEHICLE\0202\022\031\n\025MOTION_STATE_FL" +
       "Y_IDLE\0203\022\031\n\025MOTION_STATE_FLY_SLOW\0204\022\031\n\025M" +
-      "OTION_STATE_FLY_FAST\0205\022\024\n\020MOTION_STATE_N" +
-      "UM\0206\022$\n MOTION_STATE_Unk2700_OOFNNHKLEFE" +
-      "\0207\022$\n MOTION_STATE_Unk2700_KMIGLMEGNOK\0208" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "OTION_STATE_FLY_FAST\0205\022\031\n\025MOTION_STATE_A" +
+      "IM_MOVE\0206\022!\n\035MOTION_STATE_AIR_COMPENSATI" +
+      "ON\0207\022\036\n\032MOTION_STATE_SORUSH_NORMAL\0208\022\037\n\033" +
+      "MOTION_STATE_ROLLER_COASTER\0209\022\032\n\026MOTION_" +
+      "STATE_DIVE_IDLE\020:\022\032\n\026MOTION_STATE_DIVE_M" +
+      "OVE\020;\022\032\n\026MOTION_STATE_DIVE_DASH\020<\022\036\n\032MOT" +
+      "ION_STATE_DIVE_DOLPHINE\020=\022\026\n\022MOTION_STAT" +
+      "E_DEBUG\020>\022\036\n\032MOTION_STATE_OCEAN_CURRENT\020" +
+      "?\022\037\n\033MOTION_STATE_DIVE_SWIM_MOVE\020@\022\037\n\033MO" +
+      "TION_STATE_DIVE_SWIM_IDLE\020A\022\037\n\033MOTION_ST" +
+      "ATE_DIVE_SWIM_DASH\020B\022\024\n\020MOTION_STATE_NUM" +
+      "\020CB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

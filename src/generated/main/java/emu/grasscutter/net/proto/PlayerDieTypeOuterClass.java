@@ -15,6 +15,10 @@ public final class PlayerDieTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: NJLHPPKOGDB
+   * </pre>
+   *
    * Protobuf enum {@code PlayerDieType}
    */
   public enum PlayerDieType

@@ -2,16 +2,11 @@ package emu.grasscutter.game.activity.musicgame;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.MusicGameBasicData;
-import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
-import emu.grasscutter.net.proto.MusicGameRecordOuterClass;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
-import java.util.HashMap;
-import java.util.Map;
+import emu.grasscutter.net.proto.*;
+import java.util.*;
 import java.util.stream.Collectors;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -23,11 +18,14 @@ public class MusicGamePlayerData {
 
     public static MusicGamePlayerData create() {
         return MusicGamePlayerData.of()
-            .musicGameRecord(GameData.getMusicGameBasicDataMap().values().stream()
-                .collect(Collectors.toMap(MusicGameBasicData::getId, MusicGamePlayerData.MusicGameRecord::create)))
-            .personalCustomBeatmapRecord(new HashMap<>())
-            .othersCustomBeatmapRecord(new HashMap<>())
-            .build();
+                .musicGameRecord(
+                        GameData.getMusicGameBasicDataMap().values().stream()
+                                .collect(
+                                        Collectors.toMap(
+                                                MusicGameBasicData::getId, MusicGamePlayerData.MusicGameRecord::create)))
+                .personalCustomBeatmapRecord(new HashMap<>())
+                .othersCustomBeatmapRecord(new HashMap<>())
+                .build();
     }
 
     @Data
@@ -39,17 +37,15 @@ public class MusicGamePlayerData {
         int maxScore;
 
         public static MusicGameRecord create(MusicGameBasicData musicGameBasicData) {
-            return MusicGameRecord.of()
-                .musicId(musicGameBasicData.getId())
-                .build();
+            return MusicGameRecord.of().musicId(musicGameBasicData.getId()).build();
         }
 
         public MusicGameRecordOuterClass.MusicGameRecord toProto() {
             return MusicGameRecordOuterClass.MusicGameRecord.newBuilder()
-                .setIsUnlock(true)
-                .setMaxCombo(maxCombo)
-                .setMaxScore(maxScore)
-                .build();
+                    .setIsUnlock(true)
+                    .setMaxCombo(maxCombo)
+                    .setMaxScore(maxScore)
+                    .build();
         }
     }
 
@@ -61,29 +57,26 @@ public class MusicGamePlayerData {
         int score;
         boolean settle;
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toPersonalBriefProto() {
+        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder toPersonalBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
-            return MusicBriefInfoOuterClass.MusicBriefInfo.newBuilder()
-                .setCanShare(true)
-                .setCreateTime(musicGameBeatmap.getCreateTime())
-                .setMusicId(musicGameBeatmap.getMusicId())
-                .setMaxScore(musicGameBeatmap.getMaxScore())
-                .setPosition(musicGameBeatmap.getSavePosition())
-                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
-                .setMusicShareId(musicShareId);
+            return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder()
+                    //                .setCanShare(true)
+                    //                .setCreateTime(musicGameBeatmap.getCreateTime())
+                    .setMusicId(musicGameBeatmap.getMusicId())
+                    .setMaxScore(musicGameBeatmap.getMaxScore())
+                    //                .setPosition(musicGameBeatmap.getSavePosition())
+                    //                .setMusicNoteCount(musicGameBeatmap.getMusicNoteCount())
+                    .setUgcGuid(musicShareId);
         }
 
-        public MusicBriefInfoOuterClass.MusicBriefInfo.Builder toOthersBriefProto() {
+        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder toOthersBriefProto() {
             var musicGameBeatmap = MusicGameBeatmap.getByShareId(musicShareId);
 
             return musicGameBeatmap.toBriefProto()
-                .setScore(score)
-                .setSettle(settle)
-                ;
+            //                .setScore(score)
+            //                .setSettle(settle)
+            ;
         }
-
     }
 }
-
-

@@ -15,6 +15,10 @@ public final class AbilityScalarTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: HOIECOCMCMI
+   * </pre>
+   *
    * Protobuf enum {@code AbilityScalarType}
    */
   public enum AbilityScalarType

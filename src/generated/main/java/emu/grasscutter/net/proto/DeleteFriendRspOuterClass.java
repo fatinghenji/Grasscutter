@@ -25,17 +25,15 @@ public final class DeleteFriendRspOuterClass {
     int getTargetUid();
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 4075
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 9786
+   * Obf: BDBANFKGEEN
    * </pre>
    *
    * Protobuf type {@code DeleteFriendRsp}
@@ -82,7 +80,7 @@ public final class DeleteFriendRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -135,10 +133,10 @@ public final class DeleteFriendRspOuterClass {
       return targetUid_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -161,7 +159,7 @@ public final class DeleteFriendRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(13, retcode_);
       }
       if (targetUid_ != 0) {
         output.writeUInt32(14, targetUid_);
@@ -177,7 +175,7 @@ public final class DeleteFriendRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -314,10 +312,8 @@ public final class DeleteFriendRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4075
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 9786
+     * Obf: BDBANFKGEEN
      * </pre>
      *
      * Protobuf type {@code DeleteFriendRsp}
@@ -505,7 +501,7 @@ public final class DeleteFriendRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -513,7 +509,7 @@ public final class DeleteFriendRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -524,7 +520,7 @@ public final class DeleteFriendRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -601,7 +597,7 @@ public final class DeleteFriendRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025DeleteFriendRsp.proto\"6\n\017DeleteFriendR" +
-      "sp\022\022\n\ntarget_uid\030\016 \001(\r\022\017\n\007retcode\030\005 \001(\005B" +
+      "sp\022\022\n\ntarget_uid\030\016 \001(\r\022\017\n\007retcode\030\r \001(\005B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

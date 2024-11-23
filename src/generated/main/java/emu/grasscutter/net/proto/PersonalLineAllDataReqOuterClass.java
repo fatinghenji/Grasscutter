@@ -20,10 +20,8 @@ public final class PersonalLineAllDataReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 474
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 9323
+   * Obf: BDPIKKGLOCD
    * </pre>
    *
    * Protobuf type {@code PersonalLineAllDataReq}
@@ -248,10 +246,8 @@ public final class PersonalLineAllDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 474
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 9323
+     * Obf: BDPIKKGLOCD
      * </pre>
      *
      * Protobuf type {@code PersonalLineAllDataReq}

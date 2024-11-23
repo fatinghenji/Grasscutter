@@ -19,23 +19,21 @@ public final class EnterTransPointRegionNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 8;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
-     * <code>uint32 point_id = 6;</code>
+     * <code>uint32 point_id = 5;</code>
      * @return The pointId.
      */
     int getPointId();
+
+    /**
+     * <code>uint32 scene_id = 12;</code>
+     * @return The sceneId.
+     */
+    int getSceneId();
   }
   /**
    * <pre>
-   * CmdId: 205
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 22064
+   * Obf: ECDCICGGBDA
    * </pre>
    *
    * Protobuf type {@code EnterTransPointRegionNotify}
@@ -82,12 +80,12 @@ public final class EnterTransPointRegionNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 40: {
 
               pointId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 96: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -124,26 +122,26 @@ public final class EnterTransPointRegionNotifyOuterClass {
               emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.class, emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 8;
-    private int sceneId_;
-    /**
-     * <code>uint32 scene_id = 8;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
-    public static final int POINT_ID_FIELD_NUMBER = 6;
+    public static final int POINT_ID_FIELD_NUMBER = 5;
     private int pointId_;
     /**
-     * <code>uint32 point_id = 6;</code>
+     * <code>uint32 point_id = 5;</code>
      * @return The pointId.
      */
     @java.lang.Override
     public int getPointId() {
       return pointId_;
+    }
+
+    public static final int SCENE_ID_FIELD_NUMBER = 12;
+    private int sceneId_;
+    /**
+     * <code>uint32 scene_id = 12;</code>
+     * @return The sceneId.
+     */
+    @java.lang.Override
+    public int getSceneId() {
+      return sceneId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -161,10 +159,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pointId_ != 0) {
-        output.writeUInt32(6, pointId_);
+        output.writeUInt32(5, pointId_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(8, sceneId_);
+        output.writeUInt32(12, sceneId_);
       }
       unknownFields.writeTo(output);
     }
@@ -177,11 +175,11 @@ public final class EnterTransPointRegionNotifyOuterClass {
       size = 0;
       if (pointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, pointId_);
+          .computeUInt32Size(5, pointId_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sceneId_);
+          .computeUInt32Size(12, sceneId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -198,10 +196,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify other = (emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify) obj;
 
-      if (getSceneId()
-          != other.getSceneId()) return false;
       if (getPointId()
           != other.getPointId()) return false;
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -213,10 +211,10 @@ public final class EnterTransPointRegionNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -314,10 +312,8 @@ public final class EnterTransPointRegionNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 205
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 22064
+     * Obf: ECDCICGGBDA
      * </pre>
      *
      * Protobuf type {@code EnterTransPointRegionNotify}
@@ -357,9 +353,9 @@ public final class EnterTransPointRegionNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sceneId_ = 0;
-
         pointId_ = 0;
+
+        sceneId_ = 0;
 
         return this;
       }
@@ -387,8 +383,8 @@ public final class EnterTransPointRegionNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify buildPartial() {
         emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify result = new emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify(this);
-        result.sceneId_ = sceneId_;
         result.pointId_ = pointId_;
+        result.sceneId_ = sceneId_;
         onBuilt();
         return result;
       }
@@ -437,11 +433,11 @@ public final class EnterTransPointRegionNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify other) {
         if (other == emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify.getDefaultInstance()) return this;
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
         if (other.getPointId() != 0) {
           setPointId(other.getPointId());
+        }
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -472,40 +468,9 @@ public final class EnterTransPointRegionNotifyOuterClass {
         return this;
       }
 
-      private int sceneId_ ;
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scene_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pointId_ ;
       /**
-       * <code>uint32 point_id = 6;</code>
+       * <code>uint32 point_id = 5;</code>
        * @return The pointId.
        */
       @java.lang.Override
@@ -513,7 +478,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
         return pointId_;
       }
       /**
-       * <code>uint32 point_id = 6;</code>
+       * <code>uint32 point_id = 5;</code>
        * @param value The pointId to set.
        * @return This builder for chaining.
        */
@@ -524,12 +489,43 @@ public final class EnterTransPointRegionNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 point_id = 6;</code>
+       * <code>uint32 point_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
         
         pointId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sceneId_ ;
+      /**
+       * <code>uint32 scene_id = 12;</code>
+       * @return The sceneId.
+       */
+      @java.lang.Override
+      public int getSceneId() {
+        return sceneId_;
+      }
+      /**
+       * <code>uint32 scene_id = 12;</code>
+       * @param value The sceneId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSceneId(int value) {
+        
+        sceneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 scene_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSceneId() {
+        
+        sceneId_ = 0;
         onChanged();
         return this;
       }
@@ -601,8 +597,8 @@ public final class EnterTransPointRegionNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!EnterTransPointRegionNotify.proto\"A\n\033E" +
-      "nterTransPointRegionNotify\022\020\n\010scene_id\030\010" +
-      " \001(\r\022\020\n\010point_id\030\006 \001(\rB\033\n\031emu.grasscutte" +
+      "nterTransPointRegionNotify\022\020\n\010point_id\030\005" +
+      " \001(\r\022\020\n\010scene_id\030\014 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -614,7 +610,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
     internal_static_EnterTransPointRegionNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterTransPointRegionNotify_descriptor,
-        new java.lang.String[] { "SceneId", "PointId", });
+        new java.lang.String[] { "PointId", "SceneId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,19 +1,13 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.game.expedition.ExpeditionInfo;
-import emu.grasscutter.game.expedition.ExpeditionRewardDataList;
+import emu.grasscutter.game.expedition.*;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketAvatarExpeditionGetRewardRsp;
-import emu.grasscutter.server.packet.send.PacketItemAddHintNotify;
-
-import java.util.ArrayList;
-import java.util.List;
+import emu.grasscutter.server.packet.send.*;
+import java.util.*;
 
 @Opcodes(PacketOpcodes.AvatarExpeditionGetRewardReq)
 public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
@@ -24,13 +18,18 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
 
         ExpeditionInfo expInfo = player.getExpeditionInfo(req.getAvatarGuid());
         List<GameItem> items = new ArrayList<>();
-        List<ExpeditionRewardDataList> expeditionRewardDataLists = session.getServer().getExpeditionSystem().getExpeditionRewardDataList().get(expInfo.getExpId());
+        List<ExpeditionRewardDataList> expeditionRewardDataLists =
+                session
+                        .getServer()
+                        .getExpeditionSystem()
+                        .getExpeditionRewardDataList()
+                        .get(expInfo.getExpId());
 
         if (expeditionRewardDataLists != null) {
             expeditionRewardDataLists.stream()
-                .filter(r -> r.getHourTime() == expInfo.getHourTime())
-                .map(ExpeditionRewardDataList::getRewards)
-                .forEach(items::addAll);
+                    .filter(r -> r.getHourTime() == expInfo.getHourTime())
+                    .map(ExpeditionRewardDataList::getRewards)
+                    .forEach(items::addAll);
         }
 
         player.getInventory().addItems(items);
@@ -41,4 +40,3 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
         session.send(new PacketAvatarExpeditionGetRewardRsp(player.getExpeditionInfo(), items));
     }
 }
-

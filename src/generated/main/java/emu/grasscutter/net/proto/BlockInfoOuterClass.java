@@ -43,6 +43,10 @@ public final class BlockInfoOuterClass {
     boolean getIsDirty();
   }
   /**
+   * <pre>
+   * Obf: EGHIPFGJCJG
+   * </pre>
+   *
    * Protobuf type {@code BlockInfo}
    */
   public static final class BlockInfo extends
@@ -374,6 +378,10 @@ public final class BlockInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: EGHIPFGJCJG
+     * </pre>
+     *
      * Protobuf type {@code BlockInfo}
      */
     public static final class Builder extends

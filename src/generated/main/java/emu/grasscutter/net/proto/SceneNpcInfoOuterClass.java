@@ -43,6 +43,10 @@ public final class SceneNpcInfoOuterClass {
     int getBlockId();
   }
   /**
+   * <pre>
+   * Obf: HHIHPEEHHNI
+   * </pre>
+   *
    * Protobuf type {@code SceneNpcInfo}
    */
   public static final class SceneNpcInfo extends
@@ -372,6 +376,10 @@ public final class SceneNpcInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: HHIHPEEHHNI
+     * </pre>
+     *
      * Protobuf type {@code SceneNpcInfo}
      */
     public static final class Builder extends

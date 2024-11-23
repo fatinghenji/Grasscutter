@@ -1,29 +1,50 @@
 package emu.grasscutter.data.common;
 
 import com.google.gson.annotations.SerializedName;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.DailyDungeonData;
-import emu.grasscutter.utils.Position;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
-import lombok.Getter;
-import lombok.Setter;
+import emu.grasscutter.data.excels.dungeon.DailyDungeonData;
+import emu.grasscutter.game.world.Position;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
 
-public class PointData {
+public final class PointData {
     @Getter @Setter private int id;
+    @Getter private int areaId;
+
     private String $type;
     @Getter private Position tranPos;
+    @Getter private Position pos;
+    @Getter private Position rot;
+    @Getter private Position size;
+    @Getter private boolean forbidSimpleUnlock;
+    @Getter private boolean unlocked;
+    @Getter private boolean groupLimit;
 
-    @SerializedName(value="dungeonIds", alternate={"JHHFPGJNMIN"})
-    @Getter private int[] dungeonIds;
+    @SerializedName(
+            value = "dungeonIds",
+            alternate = {"JHHFPGJNMIN"})
+    @Getter
+    private int[] dungeonIds;
 
-    @SerializedName(value="dungeonRandomList", alternate={"OIBKFJNBLHO"})
-    @Getter private int[] dungeonRandomList;
+    @SerializedName(
+            value = "dungeonRandomList",
+            alternate = {"GLEKJMEEOMH"})
+    @Getter
+    private int[] dungeonRandomList;
 
-    @SerializedName(value="tranSceneId", alternate={"JHBICGBAPIH"})
-    @Getter @Setter private int tranSceneId;
+    @SerializedName(
+            value = "groupIDs",
+            alternate = {"HFOBOOHKBGF"})
+    @Getter
+    private int[] groupIDs;
+
+    @SerializedName(
+            value = "tranSceneId",
+            alternate = {"JHBICGBAPIH"})
+    @Getter
+    @Setter
+    private int tranSceneId;
 
     public String getType() {
         return $type;

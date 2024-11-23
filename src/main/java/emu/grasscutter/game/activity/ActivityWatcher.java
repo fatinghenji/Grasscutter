@@ -1,9 +1,7 @@
 package emu.grasscutter.game.activity;
 
-import emu.grasscutter.data.excels.ActivityWatcherData;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import emu.grasscutter.data.excels.activity.ActivityWatcherData;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter
@@ -16,11 +14,10 @@ public abstract class ActivityWatcher {
 
     protected abstract boolean isMeet(String... param);
 
-    public void trigger(PlayerActivityData playerActivityData, String... param){
-        if(isMeet(param)){
+    public void trigger(PlayerActivityData playerActivityData, String... param) {
+        if (isMeet(param)) {
             playerActivityData.addWatcherProgress(watcherId);
             playerActivityData.save();
         }
     }
-
 }

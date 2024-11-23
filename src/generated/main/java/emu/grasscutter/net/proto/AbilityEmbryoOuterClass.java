@@ -37,6 +37,10 @@ public final class AbilityEmbryoOuterClass {
     int getAbilityOverrideNameHash();
   }
   /**
+   * <pre>
+   * Obf: PLELJEGMEOD
+   * </pre>
+   *
    * Protobuf type {@code AbilityEmbryo}
    */
   public static final class AbilityEmbryo extends
@@ -339,6 +343,10 @@ public final class AbilityEmbryoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: PLELJEGMEOD
+     * </pre>
+     *
      * Protobuf type {@code AbilityEmbryo}
      */
     public static final class Builder extends

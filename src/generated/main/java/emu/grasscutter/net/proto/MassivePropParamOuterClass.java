@@ -65,6 +65,10 @@ public final class MassivePropParamOuterClass {
     int getSyncFlag();
   }
   /**
+   * <pre>
+   * Obf: BDEEMMBPFDH
+   * </pre>
+   *
    * Protobuf type {@code MassivePropParam}
    */
   public static final class MassivePropParam extends
@@ -499,6 +503,10 @@ public final class MassivePropParamOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: BDEEMMBPFDH
+     * </pre>
+     *
      * Protobuf type {@code MassivePropParam}
      */
     public static final class Builder extends

@@ -20,10 +20,8 @@ public final class GetWidgetSlotReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4253
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 24304
+   * Obf: BCJMLGNMNHC
    * </pre>
    *
    * Protobuf type {@code GetWidgetSlotReq}
@@ -248,10 +246,8 @@ public final class GetWidgetSlotReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4253
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 24304
+     * Obf: BCJMLGNMNHC
      * </pre>
      *
      * Protobuf type {@code GetWidgetSlotReq}

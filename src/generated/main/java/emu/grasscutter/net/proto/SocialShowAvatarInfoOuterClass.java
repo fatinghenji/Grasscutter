@@ -37,6 +37,10 @@ public final class SocialShowAvatarInfoOuterClass {
     int getCostumeId();
   }
   /**
+   * <pre>
+   * Obf: OGKHFCINDJP
+   * </pre>
+   *
    * Protobuf type {@code SocialShowAvatarInfo}
    */
   public static final class SocialShowAvatarInfo extends
@@ -339,6 +343,10 @@ public final class SocialShowAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: OGKHFCINDJP
+     * </pre>
+     *
      * Protobuf type {@code SocialShowAvatarInfo}
      */
     public static final class Builder extends

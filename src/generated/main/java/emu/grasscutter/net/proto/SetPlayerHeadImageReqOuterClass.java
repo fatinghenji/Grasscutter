@@ -26,10 +26,8 @@ public final class SetPlayerHeadImageReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4082
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 4071
+   * Obf: PDIPMMGDOGN
    * </pre>
    *
    * Protobuf type {@code SetPlayerHeadImageReq}
@@ -281,10 +279,8 @@ public final class SetPlayerHeadImageReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4082
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 4071
+     * Obf: PDIPMMGDOGN
      * </pre>
      *
      * Protobuf type {@code SetPlayerHeadImageReq}

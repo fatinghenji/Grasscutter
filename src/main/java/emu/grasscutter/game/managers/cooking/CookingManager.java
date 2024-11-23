@@ -1,26 +1,18 @@
 package emu.grasscutter.game.managers.cooking;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
 import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.packet.send.PacketCookDataNotify;
-import emu.grasscutter.server.packet.send.PacketCookRecipeDataNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerCookArgsRsp;
-import emu.grasscutter.server.packet.send.PacketPlayerCookRsp;
+import emu.grasscutter.server.packet.send.*;
 import io.netty.util.internal.ThreadLocalRandom;
+import java.util.*;
 
 public class CookingManager extends BasePlayerManager {
     private static final int MANUAL_PERFECT_COOK_QUALITY = 3;
@@ -46,7 +38,7 @@ public class CookingManager extends BasePlayerManager {
      ********************/
     public boolean unlockRecipe(int id) {
         if (this.player.getUnlockedRecipies().containsKey(id)) {
-            return false;  // Recipe already unlocked
+            return false; // Recipe already unlocked
         }
         // Tell the client that this blueprint is now unlocked and add the unlocked item to the player.
         this.player.getUnlockedRecipies().put(id, 0);
@@ -86,16 +78,14 @@ public class CookingManager extends BasePlayerManager {
         int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
 
         // Try consuming materials.
-        boolean success = player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
+        boolean success =
+                player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
         if (!success) {
             this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
         }
 
         // Get result item information.
-        int qualityIndex =
-            quality == 0
-            ? 2
-            : quality - 1;
+        int qualityIndex = quality == 0 ? 2 : quality - 1;
 
         ItemParamData resultParam = recipeData.getQualityOutputVec().get(qualityIndex);
         ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getItemId());
@@ -124,7 +114,8 @@ public class CookingManager extends BasePlayerManager {
 
         if (specialtyCount > 0) {
             ItemData specialtyItemData = GameData.getItemDataMap().get(bonusData.getReplacementItemId());
-            GameItem cookResultSpecialty = new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount);
+            GameItem cookResultSpecialty =
+                    new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount);
             cookResults.add(cookResultSpecialty);
             this.player.getInventory().addItem(cookResultSpecialty);
         }
@@ -136,7 +127,8 @@ public class CookingManager extends BasePlayerManager {
         }
 
         // Send response.
-        this.player.sendPacket(new PacketPlayerCookRsp(cookResults, quality, count, recipeId, proficiency));
+        this.player.sendPacket(
+                new PacketPlayerCookRsp(cookResults, quality, count, recipeId, proficiency));
     }
 
     /********************
@@ -146,7 +138,7 @@ public class CookingManager extends BasePlayerManager {
         this.player.sendPacket(new PacketPlayerCookArgsRsp());
     }
 
-     /********************
+    /********************
      * Notify unlocked recipies.
      ********************/
     private void addDefaultUnlocked() {
@@ -172,11 +164,13 @@ public class CookingManager extends BasePlayerManager {
 
         // Construct CookRecipeData protos.
         List<CookRecipeDataOuterClass.CookRecipeData> data = new ArrayList<>();
-        unlockedRecipes.forEach((recipeId, proficiency) ->
-            data.add(CookRecipeDataOuterClass.CookRecipeData.newBuilder()
-                .setRecipeId(recipeId)
-                .setProficiency(proficiency)
-                .build()));
+        unlockedRecipes.forEach(
+                (recipeId, proficiency) ->
+                        data.add(
+                                CookRecipeDataOuterClass.CookRecipeData.newBuilder()
+                                        .setRecipeId(recipeId)
+                                        .setProficiency(proficiency)
+                                        .build()));
 
         // Send packet.
         this.player.sendPacket(new PacketCookDataNotify(data));

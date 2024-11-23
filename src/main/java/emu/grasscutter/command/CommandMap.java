@@ -1,27 +1,23 @@
 package emu.grasscutter.command;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-
-import org.reflections.Reflections;
-
-import java.net.IDN;
+import emu.grasscutter.server.event.game.ExecuteCommandEvent;
+import it.unimi.dsi.fastutil.objects.*;
 import java.util.*;
-
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.config.Configuration.SERVER;
+import org.reflections.Reflections;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
+    private static final int INVALID_UID = Integer.MIN_VALUE;
+    private static final String consoleId = "console";
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
     private final Map<String, Command> annotations = new TreeMap<>();
     private final Object2IntMap<String> targetPlayerIds = new Object2IntOpenHashMap<>();
-    private static final int INVALID_UID = Integer.MIN_VALUE;
-    private static final String consoleId = "console";
 
     public CommandMap() {
         this(false);
@@ -35,15 +31,29 @@ public final class CommandMap {
         return Grasscutter.getCommandMap();
     }
 
+    private static int getUidFromString(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException ignored) {
+            var account = DatabaseHelper.getAccountByName(input);
+            if (account == null) return INVALID_UID;
+            var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
+            if (player == null) return INVALID_UID;
+            // We will be immediately fetching the player again after this,
+            // but offline vs online Player safety is more important than saving a lookup
+            return player.getUid();
+        }
+    }
+
     /**
      * Register a command handler.
      *
-     * @param label   The command label.
+     * @param label The command label.
      * @param command The command handler.
      * @return Instance chaining.
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
-        Grasscutter.getLogger().debug("Registered command: " + label);
+        Grasscutter.getLogger().trace("Registered command: " + label);
         label = label.toLowerCase();
 
         // Get command data.
@@ -52,11 +62,9 @@ public final class CommandMap {
         this.commands.put(label, command);
 
         // Register aliases.
-        if (annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases()) {
-                this.aliases.put(alias, command);
-                this.annotations.put(alias, annotation);
-            }
+        for (String alias : annotation.aliases()) {
+            this.aliases.put(alias, command);
+            this.annotations.put(alias, annotation);
         }
         return this;
     }
@@ -68,7 +76,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap unregisterCommand(String label) {
-        Grasscutter.getLogger().debug("Unregistered command: " + label);
+        Grasscutter.getLogger().trace("Un-registered command: " + label);
 
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;
@@ -78,18 +86,16 @@ public final class CommandMap {
         this.commands.remove(label);
 
         // Unregister aliases.
-        if (annotation.aliases().length > 0) {
-            for (String alias : annotation.aliases()) {
-                this.aliases.remove(alias);
-                this.annotations.remove(alias);
-            }
+        for (String alias : annotation.aliases()) {
+            this.aliases.remove(alias);
+            this.annotations.remove(alias);
         }
 
         return this;
     }
 
     public List<Command> getAnnotationsAsList() {
-        return new LinkedList<>(this.annotations.values());
+        return new ArrayList<>(this.annotations.values());
     }
 
     public Map<String, Command> getAnnotations() {
@@ -102,7 +108,7 @@ public final class CommandMap {
      * @return All command handlers as a list.
      */
     public List<CommandHandler> getHandlersAsList() {
-        return new LinkedList<>(this.commands.values());
+        return new ArrayList<>(this.commands.values());
     }
 
     public Map<String, CommandHandler> getHandlers() {
@@ -124,29 +130,17 @@ public final class CommandMap {
         return handler;
     }
 
-    private static int getUidFromString(String input) {
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException ignored) {
-            var account = DatabaseHelper.getAccountByName(input);
-            if (account == null) return INVALID_UID;
-            var player = DatabaseHelper.getPlayerByAccount(account);
-            if (player == null) return INVALID_UID;
-            // We will be immediately fetching the player again after this,
-            // but offline vs online Player safety is more important than saving a lookup
-            return player.getUid();
-        }
-    }
-
-    private Player getTargetPlayer(String playerId, Player player, Player targetPlayer, List<String> args) {
+    private Player getTargetPlayer(
+            String playerId, Player player, Player targetPlayer, List<String> args) {
         // Top priority: If any @UID argument is present, override targetPlayer with it.
         for (int i = 0; i < args.size(); i++) {
             String arg = args.get(i);
             if (arg.startsWith("@")) {
                 arg = args.remove(i).substring(1);
-                if (arg.equals("")) {
+                if (arg.isEmpty()) {
                     // This is a special case to target nothing, distinct from failing to assign a target.
-                    // This is specifically to allow in-game players to run a command without targeting themselves or anyone else.
+                    // This is specifically to allow in-game players to run a command without targeting
+                    // themselves or anyone else.
                     return null;
                 }
                 int uid = getUidFromString(arg);
@@ -171,7 +165,8 @@ public final class CommandMap {
 
         // Next priority: Use previously-set target. (see /target [[@]UID])
         if (targetPlayerIds.containsKey(playerId)) {
-            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.getInt(playerId), true);
+            targetPlayer =
+                    Grasscutter.getGameServer().getPlayerByUid(targetPlayerIds.getInt(playerId), true);
             // We check every time in case the target is deleted after being targeted
             if (targetPlayer == null) {
                 CommandHandler.sendTranslatedMessage(player, "commands.execution.player_exist_error");
@@ -180,12 +175,13 @@ public final class CommandMap {
             return targetPlayer;
         }
 
-        // Lowest priority: Target the player invoking the command. In the case of the console, this will return null.
+        // Lowest priority: Target the player invoking the command. In the case of the console, this
+        // will return null.
         return player;
     }
 
     private boolean setPlayerTarget(String playerId, Player player, String targetUid) {
-        if (targetUid.equals("")) { // Clears the default targetPlayer.
+        if (targetUid.isEmpty()) { // Clears the default targetPlayer.
             targetPlayerIds.removeInt(playerId);
             CommandHandler.sendTranslatedMessage(player, "commands.execution.clear_target");
             return true;
@@ -206,36 +202,56 @@ public final class CommandMap {
         targetPlayerIds.put(playerId, uid);
         String target = uid + " (" + targetPlayer.getAccount().getUsername() + ")";
         CommandHandler.sendTranslatedMessage(player, "commands.execution.set_target", target);
-        CommandHandler.sendTranslatedMessage(player, targetPlayer.isOnline() ? "commands.execution.set_target_online" : "commands.execution.set_target_offline", target);
+        CommandHandler.sendTranslatedMessage(
+                player,
+                targetPlayer.isOnline()
+                        ? "commands.execution.set_target_online"
+                        : "commands.execution.set_target_offline",
+                target);
         return true;
     }
 
     /**
      * Invoke a command handler with the given arguments.
      *
-     * @param player     The player invoking the command or null for the server console.
+     * @param player The player invoking the command or null for the server console.
      * @param rawMessage The messaged used to invoke the command.
      */
     public void invoke(Player player, Player targetPlayer, String rawMessage) {
+        // Invoke the ExecuteCommandEvent.
+        var event = new ExecuteCommandEvent(player, targetPlayer, rawMessage);
+        if (!event.call()) return;
+
+        player = event.getSender();
+        targetPlayer = event.getTarget();
+        rawMessage = event.getCommand();
+
         // The console outputs in-game command. [{Account Username} (Player UID: {Player Uid})]
         if (SERVER.logCommands) {
             if (player != null) {
-                Grasscutter.getLogger().info("Command used by [" + player.getAccount().getUsername() + " (Player UID: " + player.getUid() + ")]: " + rawMessage);
+                Grasscutter.getLogger()
+                        .info(
+                                "Command used by ["
+                                        + player.getAccount().getUsername()
+                                        + " (Player UID: "
+                                        + player.getUid()
+                                        + ")]: "
+                                        + rawMessage);
             } else {
                 Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
             }
         }
 
         rawMessage = rawMessage.trim();
-        if (rawMessage.length() == 0) {
+        if (rawMessage.isEmpty()) {
             CommandHandler.sendTranslatedMessage(player, "commands.generic.not_specified");
             return;
         }
 
         // Parse message.
         String[] split = rawMessage.split(" ");
-        List<String> args = new LinkedList<>(Arrays.asList(split));
-        String label = args.remove(0).toLowerCase();
+        String label = split[0].toLowerCase();
+        List<String> args = new ArrayList<>(Arrays.asList(split).subList(1, split.length));
         String playerId = (player == null) ? consoleId : player.getAccount().getId();
 
         // Check for special cases - currently only target command.
@@ -243,17 +259,16 @@ public final class CommandMap {
             this.setPlayerTarget(playerId, player, label.substring(1));
             return;
         } else if (label.equalsIgnoreCase("target")) { // target [[@]UID]
-            if (args.size() > 0) {
+            if (!args.isEmpty()) {
                 String targetUidStr = args.get(0);
                 if (targetUidStr.startsWith("@")) {
                     targetUidStr = targetUidStr.substring(1);
                 }
                 this.setPlayerTarget(playerId, player, targetUidStr);
-                return;
             } else {
                 this.setPlayerTarget(playerId, player, "");
-                return;
             }
+            return;
         }
 
         // Get command handler.
@@ -268,7 +283,7 @@ public final class CommandMap {
         // Get the command's annotation.
         Command annotation = this.annotations.get(label);
 
-        // Resolve targetPlayer
+        // Resolve 'targetPlayer'.
         try {
             targetPlayer = getTargetPlayer(playerId, player, targetPlayer, args);
         } catch (IllegalArgumentException e) {
@@ -276,7 +291,12 @@ public final class CommandMap {
         }
 
         // Check for permissions.
-        if (!Grasscutter.getPermissionHandler().checkPermission(player, targetPlayer, annotation.permission(), this.annotations.get(label).permissionTargeted())) {
+        if (!Grasscutter.getPermissionHandler()
+                .checkPermission(
+                        player,
+                        targetPlayer,
+                        annotation.permission(),
+                        this.annotations.get(label).permissionTargeted())) {
             return;
         }
 
@@ -303,11 +323,12 @@ public final class CommandMap {
         }
 
         // Copy player and handler to final properties.
-        final Player targetPlayerF = targetPlayer; // Is there a better way to do this?
-        final CommandHandler handlerF = handler; // Is there a better way to do this?
+        final var playerF = player;
+        final var targetPlayerF = targetPlayer;
+        final var handlerF = handler;
 
         // Invoke execute method for handler.
-        Runnable runnable = () -> handlerF.execute(player, targetPlayerF, args);
+        Runnable runnable = () -> handlerF.execute(playerF, targetPlayerF, args);
         if (annotation.threading()) {
             new Thread(runnable).start();
         } else {
@@ -315,23 +336,27 @@ public final class CommandMap {
         }
     }
 
-    /**
-     * Scans for all classes annotated with {@link Command} and registers them.
-     */
+    /** Scans for all classes annotated with {@link Command} and registers them. */
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Command.class);
 
-        classes.forEach(annotated -> {
-            try {
-                Command cmdData = annotated.getAnnotation(Command.class);
-                Object object = annotated.getDeclaredConstructor().newInstance();
-                if (object instanceof CommandHandler)
-                    this.registerCommand(cmdData.label(), (CommandHandler) object);
-                else Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a CommandHandler!");
-            } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to register command handler for " + annotated.getSimpleName(), exception);
-            }
-        });
+        classes.forEach(
+                annotated -> {
+                    try {
+                        Command cmdData = annotated.getAnnotation(Command.class);
+                        Object object = annotated.getDeclaredConstructor().newInstance();
+                        if (object instanceof CommandHandler)
+                            this.registerCommand(cmdData.label(), (CommandHandler) object);
+                        else
+                            Grasscutter.getLogger()
+                                    .error("Class " + annotated.getName() + " is not a CommandHandler!");
+                    } catch (Exception exception) {
+                        Grasscutter.getLogger()
+                                .error(
+                                        "Failed to register command handler for " + annotated.getSimpleName(),
+                                        exception);
+                    }
+                });
     }
 }

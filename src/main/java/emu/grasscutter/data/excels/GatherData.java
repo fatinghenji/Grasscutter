@@ -1,49 +1,46 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "GatherExcelConfigData.json")
 public class GatherData extends GameResource {
-	private int pointType;
-	private int id;
-	private int gadgetId;
-	private int itemId;
-	private int cd; // Probably hours
-	private boolean isForbidGuest;
-	private boolean initDisableInteract;
-	    
-	@Override
-	public int getId() {
-		return this.pointType;
-	}
+    private int pointType;
+    private int id;
+    private int gadgetId;
+    private int itemId;
+    private int cd; // Probably hours
+    private boolean isForbidGuest;
+    private boolean initDisableInteract;
 
-	public int getGatherId() {
-		return id;
-	}
+    @Override
+    public int getId() {
+        return this.pointType;
+    }
 
-	public int getGadgetId() {
-		return gadgetId;
-	}
+    public int getGatherId() {
+        return id;
+    }
 
-	public int getItemId() {
-		return itemId;
-	}
+    public int getGadgetId() {
+        return gadgetId;
+    }
 
-	public int getCd() {
-		return cd;
-	}
+    public int getItemId() {
+        return itemId;
+    }
 
-	public boolean isForbidGuest() {
-		return isForbidGuest;
-	}
+    public int getCd() {
+        return cd;
+    }
 
-	public boolean initDisableInteract() {
-		return initDisableInteract;
-	}
+    public boolean isForbidGuest() {
+        return isForbidGuest;
+    }
 
-	@Override
-	public void onLoad() {
+    public boolean initDisableInteract() {
+        return initDisableInteract;
+    }
 
-	}
+    @Override
+    public void onLoad() {}
 }

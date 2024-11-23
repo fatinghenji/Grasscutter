@@ -37,10 +37,8 @@ public final class ReadMailNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1412
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 6739
+   * Obf: EHONJGBBFEG
    * </pre>
    *
    * Protobuf type {@code ReadMailNotify}
@@ -347,10 +345,8 @@ public final class ReadMailNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1412
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 6739
+     * Obf: EHONJGBBFEG
      * </pre>
      *
      * Protobuf type {@code ReadMailNotify}

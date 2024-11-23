@@ -19,42 +19,46 @@ public final class AttackHitEffectResultOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float hit_halt_time_scale = 8;</code>
-     * @return The hitHaltTimeScale.
+     * <code>uint32 PPEJOCMAFFH = 11;</code>
+     * @return The pPEJOCMAFFH.
      */
-    float getHitHaltTimeScale();
+    int getPPEJOCMAFFH();
 
     /**
-     * <code>uint32 original_hit_eff_level = 12;</code>
-     * @return The originalHitEffLevel.
+     * <code>float HLMGLLLLEIJ = 7;</code>
+     * @return The hLMGLLLLEIJ.
      */
-    int getOriginalHitEffLevel();
+    float getHLMGLLLLEIJ();
 
     /**
-     * <code>float air_strength = 15;</code>
-     * @return The airStrength.
+     * <code>uint32 POCHAAAEPMH = 2;</code>
+     * @return The pOCHAAAEPMH.
      */
-    float getAirStrength();
+    int getPOCHAAAEPMH();
 
     /**
-     * <code>uint32 hit_eff_level = 2;</code>
-     * @return The hitEffLevel.
+     * <code>float NMMAGALAPME = 13;</code>
+     * @return The nMMAGALAPME.
      */
-    int getHitEffLevel();
+    float getNMMAGALAPME();
 
     /**
-     * <code>float hit_halt_time = 13;</code>
-     * @return The hitHaltTime.
+     * <code>float DPMHMPLKOEK = 1;</code>
+     * @return The dPMHMPLKOEK.
      */
-    float getHitHaltTime();
+    float getDPMHMPLKOEK();
 
     /**
-     * <code>float retreat_strength = 7;</code>
-     * @return The retreatStrength.
+     * <code>float LOHBEFJPFHA = 5;</code>
+     * @return The lOHBEFJPFHA.
      */
-    float getRetreatStrength();
+    float getLOHBEFJPFHA();
   }
   /**
+   * <pre>
+   * Obf: LEKHHDAJFPK
+   * </pre>
+   *
    * Protobuf type {@code AttackHitEffectResult}
    */
   public static final class AttackHitEffectResult extends
@@ -99,34 +103,34 @@ public final class AttackHitEffectResultOuterClass {
             case 0:
               done = true;
               break;
+            case 13: {
+
+              dPMHMPLKOEK_ = input.readFloat();
+              break;
+            }
             case 16: {
 
-              hitEffLevel_ = input.readUInt32();
+              pOCHAAAEPMH_ = input.readUInt32();
+              break;
+            }
+            case 45: {
+
+              lOHBEFJPFHA_ = input.readFloat();
               break;
             }
             case 61: {
 
-              retreatStrength_ = input.readFloat();
+              hLMGLLLLEIJ_ = input.readFloat();
               break;
             }
-            case 69: {
+            case 88: {
 
-              hitHaltTimeScale_ = input.readFloat();
-              break;
-            }
-            case 96: {
-
-              originalHitEffLevel_ = input.readUInt32();
+              pPEJOCMAFFH_ = input.readUInt32();
               break;
             }
             case 109: {
 
-              hitHaltTime_ = input.readFloat();
-              break;
-            }
-            case 125: {
-
-              airStrength_ = input.readFloat();
+              nMMAGALAPME_ = input.readFloat();
               break;
             }
             default: {
@@ -161,70 +165,70 @@ public final class AttackHitEffectResultOuterClass {
               emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.class, emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.Builder.class);
     }
 
-    public static final int HIT_HALT_TIME_SCALE_FIELD_NUMBER = 8;
-    private float hitHaltTimeScale_;
+    public static final int PPEJOCMAFFH_FIELD_NUMBER = 11;
+    private int pPEJOCMAFFH_;
     /**
-     * <code>float hit_halt_time_scale = 8;</code>
-     * @return The hitHaltTimeScale.
+     * <code>uint32 PPEJOCMAFFH = 11;</code>
+     * @return The pPEJOCMAFFH.
      */
     @java.lang.Override
-    public float getHitHaltTimeScale() {
-      return hitHaltTimeScale_;
+    public int getPPEJOCMAFFH() {
+      return pPEJOCMAFFH_;
     }
 
-    public static final int ORIGINAL_HIT_EFF_LEVEL_FIELD_NUMBER = 12;
-    private int originalHitEffLevel_;
+    public static final int HLMGLLLLEIJ_FIELD_NUMBER = 7;
+    private float hLMGLLLLEIJ_;
     /**
-     * <code>uint32 original_hit_eff_level = 12;</code>
-     * @return The originalHitEffLevel.
+     * <code>float HLMGLLLLEIJ = 7;</code>
+     * @return The hLMGLLLLEIJ.
      */
     @java.lang.Override
-    public int getOriginalHitEffLevel() {
-      return originalHitEffLevel_;
+    public float getHLMGLLLLEIJ() {
+      return hLMGLLLLEIJ_;
     }
 
-    public static final int AIR_STRENGTH_FIELD_NUMBER = 15;
-    private float airStrength_;
+    public static final int POCHAAAEPMH_FIELD_NUMBER = 2;
+    private int pOCHAAAEPMH_;
     /**
-     * <code>float air_strength = 15;</code>
-     * @return The airStrength.
+     * <code>uint32 POCHAAAEPMH = 2;</code>
+     * @return The pOCHAAAEPMH.
      */
     @java.lang.Override
-    public float getAirStrength() {
-      return airStrength_;
+    public int getPOCHAAAEPMH() {
+      return pOCHAAAEPMH_;
     }
 
-    public static final int HIT_EFF_LEVEL_FIELD_NUMBER = 2;
-    private int hitEffLevel_;
+    public static final int NMMAGALAPME_FIELD_NUMBER = 13;
+    private float nMMAGALAPME_;
     /**
-     * <code>uint32 hit_eff_level = 2;</code>
-     * @return The hitEffLevel.
+     * <code>float NMMAGALAPME = 13;</code>
+     * @return The nMMAGALAPME.
      */
     @java.lang.Override
-    public int getHitEffLevel() {
-      return hitEffLevel_;
+    public float getNMMAGALAPME() {
+      return nMMAGALAPME_;
     }
 
-    public static final int HIT_HALT_TIME_FIELD_NUMBER = 13;
-    private float hitHaltTime_;
+    public static final int DPMHMPLKOEK_FIELD_NUMBER = 1;
+    private float dPMHMPLKOEK_;
     /**
-     * <code>float hit_halt_time = 13;</code>
-     * @return The hitHaltTime.
+     * <code>float DPMHMPLKOEK = 1;</code>
+     * @return The dPMHMPLKOEK.
      */
     @java.lang.Override
-    public float getHitHaltTime() {
-      return hitHaltTime_;
+    public float getDPMHMPLKOEK() {
+      return dPMHMPLKOEK_;
     }
 
-    public static final int RETREAT_STRENGTH_FIELD_NUMBER = 7;
-    private float retreatStrength_;
+    public static final int LOHBEFJPFHA_FIELD_NUMBER = 5;
+    private float lOHBEFJPFHA_;
     /**
-     * <code>float retreat_strength = 7;</code>
-     * @return The retreatStrength.
+     * <code>float LOHBEFJPFHA = 5;</code>
+     * @return The lOHBEFJPFHA.
      */
     @java.lang.Override
-    public float getRetreatStrength() {
-      return retreatStrength_;
+    public float getLOHBEFJPFHA() {
+      return lOHBEFJPFHA_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,23 +245,23 @@ public final class AttackHitEffectResultOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hitEffLevel_ != 0) {
-        output.writeUInt32(2, hitEffLevel_);
+      if (dPMHMPLKOEK_ != 0F) {
+        output.writeFloat(1, dPMHMPLKOEK_);
       }
-      if (retreatStrength_ != 0F) {
-        output.writeFloat(7, retreatStrength_);
+      if (pOCHAAAEPMH_ != 0) {
+        output.writeUInt32(2, pOCHAAAEPMH_);
       }
-      if (hitHaltTimeScale_ != 0F) {
-        output.writeFloat(8, hitHaltTimeScale_);
+      if (lOHBEFJPFHA_ != 0F) {
+        output.writeFloat(5, lOHBEFJPFHA_);
       }
-      if (originalHitEffLevel_ != 0) {
-        output.writeUInt32(12, originalHitEffLevel_);
+      if (hLMGLLLLEIJ_ != 0F) {
+        output.writeFloat(7, hLMGLLLLEIJ_);
       }
-      if (hitHaltTime_ != 0F) {
-        output.writeFloat(13, hitHaltTime_);
+      if (pPEJOCMAFFH_ != 0) {
+        output.writeUInt32(11, pPEJOCMAFFH_);
       }
-      if (airStrength_ != 0F) {
-        output.writeFloat(15, airStrength_);
+      if (nMMAGALAPME_ != 0F) {
+        output.writeFloat(13, nMMAGALAPME_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,29 +272,29 @@ public final class AttackHitEffectResultOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hitEffLevel_ != 0) {
+      if (dPMHMPLKOEK_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, hitEffLevel_);
+          .computeFloatSize(1, dPMHMPLKOEK_);
       }
-      if (retreatStrength_ != 0F) {
+      if (pOCHAAAEPMH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, retreatStrength_);
+          .computeUInt32Size(2, pOCHAAAEPMH_);
       }
-      if (hitHaltTimeScale_ != 0F) {
+      if (lOHBEFJPFHA_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(8, hitHaltTimeScale_);
+          .computeFloatSize(5, lOHBEFJPFHA_);
       }
-      if (originalHitEffLevel_ != 0) {
+      if (hLMGLLLLEIJ_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, originalHitEffLevel_);
+          .computeFloatSize(7, hLMGLLLLEIJ_);
       }
-      if (hitHaltTime_ != 0F) {
+      if (pPEJOCMAFFH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(13, hitHaltTime_);
+          .computeUInt32Size(11, pPEJOCMAFFH_);
       }
-      if (airStrength_ != 0F) {
+      if (nMMAGALAPME_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(15, airStrength_);
+          .computeFloatSize(13, nMMAGALAPME_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,22 +311,22 @@ public final class AttackHitEffectResultOuterClass {
       }
       emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult other = (emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult) obj;
 
-      if (java.lang.Float.floatToIntBits(getHitHaltTimeScale())
+      if (getPPEJOCMAFFH()
+          != other.getPPEJOCMAFFH()) return false;
+      if (java.lang.Float.floatToIntBits(getHLMGLLLLEIJ())
           != java.lang.Float.floatToIntBits(
-              other.getHitHaltTimeScale())) return false;
-      if (getOriginalHitEffLevel()
-          != other.getOriginalHitEffLevel()) return false;
-      if (java.lang.Float.floatToIntBits(getAirStrength())
+              other.getHLMGLLLLEIJ())) return false;
+      if (getPOCHAAAEPMH()
+          != other.getPOCHAAAEPMH()) return false;
+      if (java.lang.Float.floatToIntBits(getNMMAGALAPME())
           != java.lang.Float.floatToIntBits(
-              other.getAirStrength())) return false;
-      if (getHitEffLevel()
-          != other.getHitEffLevel()) return false;
-      if (java.lang.Float.floatToIntBits(getHitHaltTime())
+              other.getNMMAGALAPME())) return false;
+      if (java.lang.Float.floatToIntBits(getDPMHMPLKOEK())
           != java.lang.Float.floatToIntBits(
-              other.getHitHaltTime())) return false;
-      if (java.lang.Float.floatToIntBits(getRetreatStrength())
+              other.getDPMHMPLKOEK())) return false;
+      if (java.lang.Float.floatToIntBits(getLOHBEFJPFHA())
           != java.lang.Float.floatToIntBits(
-              other.getRetreatStrength())) return false;
+              other.getLOHBEFJPFHA())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -334,22 +338,22 @@ public final class AttackHitEffectResultOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HIT_HALT_TIME_SCALE_FIELD_NUMBER;
+      hash = (37 * hash) + PPEJOCMAFFH_FIELD_NUMBER;
+      hash = (53 * hash) + getPPEJOCMAFFH();
+      hash = (37 * hash) + HLMGLLLLEIJ_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getHitHaltTimeScale());
-      hash = (37 * hash) + ORIGINAL_HIT_EFF_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getOriginalHitEffLevel();
-      hash = (37 * hash) + AIR_STRENGTH_FIELD_NUMBER;
+          getHLMGLLLLEIJ());
+      hash = (37 * hash) + POCHAAAEPMH_FIELD_NUMBER;
+      hash = (53 * hash) + getPOCHAAAEPMH();
+      hash = (37 * hash) + NMMAGALAPME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAirStrength());
-      hash = (37 * hash) + HIT_EFF_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getHitEffLevel();
-      hash = (37 * hash) + HIT_HALT_TIME_FIELD_NUMBER;
+          getNMMAGALAPME());
+      hash = (37 * hash) + DPMHMPLKOEK_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getHitHaltTime());
-      hash = (37 * hash) + RETREAT_STRENGTH_FIELD_NUMBER;
+          getDPMHMPLKOEK());
+      hash = (37 * hash) + LOHBEFJPFHA_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getRetreatStrength());
+          getLOHBEFJPFHA());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -446,6 +450,10 @@ public final class AttackHitEffectResultOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: LEKHHDAJFPK
+     * </pre>
+     *
      * Protobuf type {@code AttackHitEffectResult}
      */
     public static final class Builder extends
@@ -483,17 +491,17 @@ public final class AttackHitEffectResultOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hitHaltTimeScale_ = 0F;
+        pPEJOCMAFFH_ = 0;
 
-        originalHitEffLevel_ = 0;
+        hLMGLLLLEIJ_ = 0F;
 
-        airStrength_ = 0F;
+        pOCHAAAEPMH_ = 0;
 
-        hitEffLevel_ = 0;
+        nMMAGALAPME_ = 0F;
 
-        hitHaltTime_ = 0F;
+        dPMHMPLKOEK_ = 0F;
 
-        retreatStrength_ = 0F;
+        lOHBEFJPFHA_ = 0F;
 
         return this;
       }
@@ -521,12 +529,12 @@ public final class AttackHitEffectResultOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult buildPartial() {
         emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult result = new emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult(this);
-        result.hitHaltTimeScale_ = hitHaltTimeScale_;
-        result.originalHitEffLevel_ = originalHitEffLevel_;
-        result.airStrength_ = airStrength_;
-        result.hitEffLevel_ = hitEffLevel_;
-        result.hitHaltTime_ = hitHaltTime_;
-        result.retreatStrength_ = retreatStrength_;
+        result.pPEJOCMAFFH_ = pPEJOCMAFFH_;
+        result.hLMGLLLLEIJ_ = hLMGLLLLEIJ_;
+        result.pOCHAAAEPMH_ = pOCHAAAEPMH_;
+        result.nMMAGALAPME_ = nMMAGALAPME_;
+        result.dPMHMPLKOEK_ = dPMHMPLKOEK_;
+        result.lOHBEFJPFHA_ = lOHBEFJPFHA_;
         onBuilt();
         return result;
       }
@@ -575,23 +583,23 @@ public final class AttackHitEffectResultOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult other) {
         if (other == emu.grasscutter.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.getDefaultInstance()) return this;
-        if (other.getHitHaltTimeScale() != 0F) {
-          setHitHaltTimeScale(other.getHitHaltTimeScale());
+        if (other.getPPEJOCMAFFH() != 0) {
+          setPPEJOCMAFFH(other.getPPEJOCMAFFH());
         }
-        if (other.getOriginalHitEffLevel() != 0) {
-          setOriginalHitEffLevel(other.getOriginalHitEffLevel());
+        if (other.getHLMGLLLLEIJ() != 0F) {
+          setHLMGLLLLEIJ(other.getHLMGLLLLEIJ());
         }
-        if (other.getAirStrength() != 0F) {
-          setAirStrength(other.getAirStrength());
+        if (other.getPOCHAAAEPMH() != 0) {
+          setPOCHAAAEPMH(other.getPOCHAAAEPMH());
         }
-        if (other.getHitEffLevel() != 0) {
-          setHitEffLevel(other.getHitEffLevel());
+        if (other.getNMMAGALAPME() != 0F) {
+          setNMMAGALAPME(other.getNMMAGALAPME());
         }
-        if (other.getHitHaltTime() != 0F) {
-          setHitHaltTime(other.getHitHaltTime());
+        if (other.getDPMHMPLKOEK() != 0F) {
+          setDPMHMPLKOEK(other.getDPMHMPLKOEK());
         }
-        if (other.getRetreatStrength() != 0F) {
-          setRetreatStrength(other.getRetreatStrength());
+        if (other.getLOHBEFJPFHA() != 0F) {
+          setLOHBEFJPFHA(other.getLOHBEFJPFHA());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -622,188 +630,188 @@ public final class AttackHitEffectResultOuterClass {
         return this;
       }
 
-      private float hitHaltTimeScale_ ;
+      private int pPEJOCMAFFH_ ;
       /**
-       * <code>float hit_halt_time_scale = 8;</code>
-       * @return The hitHaltTimeScale.
+       * <code>uint32 PPEJOCMAFFH = 11;</code>
+       * @return The pPEJOCMAFFH.
        */
       @java.lang.Override
-      public float getHitHaltTimeScale() {
-        return hitHaltTimeScale_;
+      public int getPPEJOCMAFFH() {
+        return pPEJOCMAFFH_;
       }
       /**
-       * <code>float hit_halt_time_scale = 8;</code>
-       * @param value The hitHaltTimeScale to set.
+       * <code>uint32 PPEJOCMAFFH = 11;</code>
+       * @param value The pPEJOCMAFFH to set.
        * @return This builder for chaining.
        */
-      public Builder setHitHaltTimeScale(float value) {
+      public Builder setPPEJOCMAFFH(int value) {
         
-        hitHaltTimeScale_ = value;
+        pPEJOCMAFFH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float hit_halt_time_scale = 8;</code>
+       * <code>uint32 PPEJOCMAFFH = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHitHaltTimeScale() {
+      public Builder clearPPEJOCMAFFH() {
         
-        hitHaltTimeScale_ = 0F;
+        pPEJOCMAFFH_ = 0;
         onChanged();
         return this;
       }
 
-      private int originalHitEffLevel_ ;
+      private float hLMGLLLLEIJ_ ;
       /**
-       * <code>uint32 original_hit_eff_level = 12;</code>
-       * @return The originalHitEffLevel.
+       * <code>float HLMGLLLLEIJ = 7;</code>
+       * @return The hLMGLLLLEIJ.
        */
       @java.lang.Override
-      public int getOriginalHitEffLevel() {
-        return originalHitEffLevel_;
+      public float getHLMGLLLLEIJ() {
+        return hLMGLLLLEIJ_;
       }
       /**
-       * <code>uint32 original_hit_eff_level = 12;</code>
-       * @param value The originalHitEffLevel to set.
+       * <code>float HLMGLLLLEIJ = 7;</code>
+       * @param value The hLMGLLLLEIJ to set.
        * @return This builder for chaining.
        */
-      public Builder setOriginalHitEffLevel(int value) {
+      public Builder setHLMGLLLLEIJ(float value) {
         
-        originalHitEffLevel_ = value;
+        hLMGLLLLEIJ_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 original_hit_eff_level = 12;</code>
+       * <code>float HLMGLLLLEIJ = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOriginalHitEffLevel() {
+      public Builder clearHLMGLLLLEIJ() {
         
-        originalHitEffLevel_ = 0;
+        hLMGLLLLEIJ_ = 0F;
         onChanged();
         return this;
       }
 
-      private float airStrength_ ;
+      private int pOCHAAAEPMH_ ;
       /**
-       * <code>float air_strength = 15;</code>
-       * @return The airStrength.
+       * <code>uint32 POCHAAAEPMH = 2;</code>
+       * @return The pOCHAAAEPMH.
        */
       @java.lang.Override
-      public float getAirStrength() {
-        return airStrength_;
+      public int getPOCHAAAEPMH() {
+        return pOCHAAAEPMH_;
       }
       /**
-       * <code>float air_strength = 15;</code>
-       * @param value The airStrength to set.
+       * <code>uint32 POCHAAAEPMH = 2;</code>
+       * @param value The pOCHAAAEPMH to set.
        * @return This builder for chaining.
        */
-      public Builder setAirStrength(float value) {
+      public Builder setPOCHAAAEPMH(int value) {
         
-        airStrength_ = value;
+        pOCHAAAEPMH_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float air_strength = 15;</code>
+       * <code>uint32 POCHAAAEPMH = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAirStrength() {
+      public Builder clearPOCHAAAEPMH() {
         
-        airStrength_ = 0F;
+        pOCHAAAEPMH_ = 0;
         onChanged();
         return this;
       }
 
-      private int hitEffLevel_ ;
+      private float nMMAGALAPME_ ;
       /**
-       * <code>uint32 hit_eff_level = 2;</code>
-       * @return The hitEffLevel.
+       * <code>float NMMAGALAPME = 13;</code>
+       * @return The nMMAGALAPME.
        */
       @java.lang.Override
-      public int getHitEffLevel() {
-        return hitEffLevel_;
+      public float getNMMAGALAPME() {
+        return nMMAGALAPME_;
       }
       /**
-       * <code>uint32 hit_eff_level = 2;</code>
-       * @param value The hitEffLevel to set.
+       * <code>float NMMAGALAPME = 13;</code>
+       * @param value The nMMAGALAPME to set.
        * @return This builder for chaining.
        */
-      public Builder setHitEffLevel(int value) {
+      public Builder setNMMAGALAPME(float value) {
         
-        hitEffLevel_ = value;
+        nMMAGALAPME_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 hit_eff_level = 2;</code>
+       * <code>float NMMAGALAPME = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHitEffLevel() {
+      public Builder clearNMMAGALAPME() {
         
-        hitEffLevel_ = 0;
+        nMMAGALAPME_ = 0F;
         onChanged();
         return this;
       }
 
-      private float hitHaltTime_ ;
+      private float dPMHMPLKOEK_ ;
       /**
-       * <code>float hit_halt_time = 13;</code>
-       * @return The hitHaltTime.
+       * <code>float DPMHMPLKOEK = 1;</code>
+       * @return The dPMHMPLKOEK.
        */
       @java.lang.Override
-      public float getHitHaltTime() {
-        return hitHaltTime_;
+      public float getDPMHMPLKOEK() {
+        return dPMHMPLKOEK_;
       }
       /**
-       * <code>float hit_halt_time = 13;</code>
-       * @param value The hitHaltTime to set.
+       * <code>float DPMHMPLKOEK = 1;</code>
+       * @param value The dPMHMPLKOEK to set.
        * @return This builder for chaining.
        */
-      public Builder setHitHaltTime(float value) {
+      public Builder setDPMHMPLKOEK(float value) {
         
-        hitHaltTime_ = value;
+        dPMHMPLKOEK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float hit_halt_time = 13;</code>
+       * <code>float DPMHMPLKOEK = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHitHaltTime() {
+      public Builder clearDPMHMPLKOEK() {
         
-        hitHaltTime_ = 0F;
+        dPMHMPLKOEK_ = 0F;
         onChanged();
         return this;
       }
 
-      private float retreatStrength_ ;
+      private float lOHBEFJPFHA_ ;
       /**
-       * <code>float retreat_strength = 7;</code>
-       * @return The retreatStrength.
+       * <code>float LOHBEFJPFHA = 5;</code>
+       * @return The lOHBEFJPFHA.
        */
       @java.lang.Override
-      public float getRetreatStrength() {
-        return retreatStrength_;
+      public float getLOHBEFJPFHA() {
+        return lOHBEFJPFHA_;
       }
       /**
-       * <code>float retreat_strength = 7;</code>
-       * @param value The retreatStrength to set.
+       * <code>float LOHBEFJPFHA = 5;</code>
+       * @param value The lOHBEFJPFHA to set.
        * @return This builder for chaining.
        */
-      public Builder setRetreatStrength(float value) {
+      public Builder setLOHBEFJPFHA(float value) {
         
-        retreatStrength_ = value;
+        lOHBEFJPFHA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float retreat_strength = 7;</code>
+       * <code>float LOHBEFJPFHA = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRetreatStrength() {
+      public Builder clearLOHBEFJPFHA() {
         
-        retreatStrength_ = 0F;
+        lOHBEFJPFHA_ = 0F;
         onChanged();
         return this;
       }
@@ -874,13 +882,12 @@ public final class AttackHitEffectResultOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033AttackHitEffectResult.proto\"\262\001\n\025Attack" +
-      "HitEffectResult\022\033\n\023hit_halt_time_scale\030\010" +
-      " \001(\002\022\036\n\026original_hit_eff_level\030\014 \001(\r\022\024\n\014" +
-      "air_strength\030\017 \001(\002\022\025\n\rhit_eff_level\030\002 \001(" +
-      "\r\022\025\n\rhit_halt_time\030\r \001(\002\022\030\n\020retreat_stre" +
-      "ngth\030\007 \001(\002B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\033AttackHitEffectResult.proto\"\225\001\n\025Attack" +
+      "HitEffectResult\022\023\n\013PPEJOCMAFFH\030\013 \001(\r\022\023\n\013" +
+      "HLMGLLLLEIJ\030\007 \001(\002\022\023\n\013POCHAAAEPMH\030\002 \001(\r\022\023" +
+      "\n\013NMMAGALAPME\030\r \001(\002\022\023\n\013DPMHMPLKOEK\030\001 \001(\002" +
+      "\022\023\n\013LOHBEFJPFHA\030\005 \001(\002B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -891,7 +898,7 @@ public final class AttackHitEffectResultOuterClass {
     internal_static_AttackHitEffectResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AttackHitEffectResult_descriptor,
-        new java.lang.String[] { "HitHaltTimeScale", "OriginalHitEffLevel", "AirStrength", "HitEffLevel", "HitHaltTime", "RetreatStrength", });
+        new java.lang.String[] { "PPEJOCMAFFH", "HLMGLLLLEIJ", "POCHAAAEPMH", "NMMAGALAPME", "DPMHMPLKOEK", "LOHBEFJPFHA", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

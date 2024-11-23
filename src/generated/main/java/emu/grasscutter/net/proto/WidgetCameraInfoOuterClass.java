@@ -25,6 +25,10 @@ public final class WidgetCameraInfoOuterClass {
     int getTargetEntityId();
   }
   /**
+   * <pre>
+   * Obf: OHOKHLNOBNM
+   * </pre>
+   *
    * Protobuf type {@code WidgetCameraInfo}
    */
   public static final class WidgetCameraInfo extends
@@ -273,6 +277,10 @@ public final class WidgetCameraInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: OHOKHLNOBNM
+     * </pre>
+     *
      * Protobuf type {@code WidgetCameraInfo}
      */
     public static final class Builder extends

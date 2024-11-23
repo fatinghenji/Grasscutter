@@ -19,7 +19,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 1;</code>
+     * <code>uint32 scene_id = 5;</code>
      * @return The sceneId.
      */
     int getSceneId();
@@ -40,6 +40,10 @@ public final class PlayerWorldLocationInfoOuterClass {
     emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocOrBuilder();
   }
   /**
+   * <pre>
+   * Obf: JNPBJHGCCOP
+   * </pre>
+   *
    * Protobuf type {@code PlayerWorldLocationInfo}
    */
   public static final class PlayerWorldLocationInfo extends
@@ -84,7 +88,7 @@ public final class PlayerWorldLocationInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
               sceneId_ = input.readUInt32();
               break;
@@ -134,10 +138,10 @@ public final class PlayerWorldLocationInfoOuterClass {
               emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.class, emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 1;
+    public static final int SCENE_ID_FIELD_NUMBER = 5;
     private int sceneId_;
     /**
-     * <code>uint32 scene_id = 1;</code>
+     * <code>uint32 scene_id = 5;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -186,7 +190,7 @@ public final class PlayerWorldLocationInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sceneId_ != 0) {
-        output.writeUInt32(1, sceneId_);
+        output.writeUInt32(5, sceneId_);
       }
       if (playerLoc_ != null) {
         output.writeMessage(12, getPlayerLoc());
@@ -202,7 +206,7 @@ public final class PlayerWorldLocationInfoOuterClass {
       size = 0;
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, sceneId_);
+          .computeUInt32Size(5, sceneId_);
       }
       if (playerLoc_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -343,6 +347,10 @@ public final class PlayerWorldLocationInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: JNPBJHGCCOP
+     * </pre>
+     *
      * Protobuf type {@code PlayerWorldLocationInfo}
      */
     public static final class Builder extends
@@ -505,7 +513,7 @@ public final class PlayerWorldLocationInfoOuterClass {
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -513,7 +521,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -524,7 +532,7 @@ public final class PlayerWorldLocationInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 scene_id = 1;</code>
+       * <code>uint32 scene_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -721,7 +729,7 @@ public final class PlayerWorldLocationInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035PlayerWorldLocationInfo.proto\032\030PlayerL" +
       "ocationInfo.proto\"T\n\027PlayerWorldLocation" +
-      "Info\022\020\n\010scene_id\030\001 \001(\r\022\'\n\nplayer_loc\030\014 \001" +
+      "Info\022\020\n\010scene_id\030\005 \001(\r\022\'\n\nplayer_loc\030\014 \001" +
       "(\0132\023.PlayerLocationInfoB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };

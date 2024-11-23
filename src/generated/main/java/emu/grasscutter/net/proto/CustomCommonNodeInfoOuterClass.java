@@ -43,6 +43,10 @@ public final class CustomCommonNodeInfoOuterClass {
         getSlotIdentifierBytes();
   }
   /**
+   * <pre>
+   * Obf: IGADMBECIDG
+   * </pre>
+   *
    * Protobuf type {@code CustomCommonNodeInfo}
    */
   public static final class CustomCommonNodeInfo extends
@@ -373,6 +377,10 @@ public final class CustomCommonNodeInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: IGADMBECIDG
+     * </pre>
+     *
      * Protobuf type {@code CustomCommonNodeInfo}
      */
     public static final class Builder extends

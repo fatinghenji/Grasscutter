@@ -37,10 +37,8 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4203
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 24690
+   * Obf: NACEJFMBMNI
    * </pre>
    *
    * Protobuf type {@code QueryCodexMonsterBeKilledNumReq}
@@ -347,10 +345,8 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4203
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 24690
+     * Obf: NACEJFMBMNI
      * </pre>
      *
      * Protobuf type {@code QueryCodexMonsterBeKilledNumReq}

@@ -37,6 +37,10 @@ public final class AbilityGadgetInfoOuterClass {
     int getTargetEntityId();
   }
   /**
+   * <pre>
+   * Obf: AHHOEHNNEIN
+   * </pre>
+   *
    * Protobuf type {@code AbilityGadgetInfo}
    */
   public static final class AbilityGadgetInfo extends
@@ -339,6 +343,10 @@ public final class AbilityGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: AHHOEHNNEIN
+     * </pre>
+     *
      * Protobuf type {@code AbilityGadgetInfo}
      */
     public static final class Builder extends

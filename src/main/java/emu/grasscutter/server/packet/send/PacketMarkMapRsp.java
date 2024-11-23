@@ -1,23 +1,22 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.managers.mapmark.MapMark;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.*;
-
-import java.util.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint;
+import emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp;
+import java.util.Map;
 
 public class PacketMarkMapRsp extends BasePacket {
 
     public PacketMarkMapRsp(Map<String, MapMark> mapMarks) {
         super(PacketOpcodes.MarkMapRsp);
 
-        MarkMapRspOuterClass.MarkMapRsp.Builder proto = MarkMapRspOuterClass.MarkMapRsp.newBuilder();
+        var proto = MarkMapRsp.newBuilder();
         proto.setRetcode(0);
 
         if (mapMarks != null) {
-            for (MapMark mapMark: mapMarks.values()) {
-                MapMarkPointOuterClass.MapMarkPoint.Builder markPoint = MapMarkPointOuterClass.MapMarkPoint.newBuilder();
+            for (MapMark mapMark : mapMarks.values()) {
+                var markPoint = MapMarkPoint.newBuilder();
                 markPoint.setSceneId(mapMark.getSceneId());
                 markPoint.setName(mapMark.getName());
                 markPoint.setPos(mapMark.getPosition().toProto());
@@ -29,8 +28,6 @@ public class PacketMarkMapRsp extends BasePacket {
                 proto.addMarkList(markPoint.build());
             }
         }
-
-        MarkMapRspOuterClass.MarkMapRsp data = proto.build();
-        this.setData(data);
+        this.setData(proto.build());
     }
 }

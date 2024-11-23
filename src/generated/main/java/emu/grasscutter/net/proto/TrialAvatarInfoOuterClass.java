@@ -64,6 +64,10 @@ public final class TrialAvatarInfoOuterClass {
     emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecordOrBuilder getGrantRecordOrBuilder();
   }
   /**
+   * <pre>
+   * Obf: FMNJAFCPNPD
+   * </pre>
+   *
    * Protobuf type {@code TrialAvatarInfo}
    */
   public static final class TrialAvatarInfo extends
@@ -434,6 +438,10 @@ public final class TrialAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: FMNJAFCPNPD
+     * </pre>
+     *
      * Protobuf type {@code TrialAvatarInfo}
      */
     public static final class Builder extends

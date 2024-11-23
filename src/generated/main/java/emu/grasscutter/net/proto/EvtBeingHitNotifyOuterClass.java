@@ -19,37 +19,35 @@ public final class EvtBeingHitNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ForwardType forward_type = 6;</code>
+     * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     int getForwardTypeValue();
     /**
-     * <code>.ForwardType forward_type = 6;</code>
+     * <code>.ForwardType forward_type = 9;</code>
      * @return The forwardType.
      */
     emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
 
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      * @return Whether the beingHitInfo field is set.
      */
     boolean hasBeingHitInfo();
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      * @return The beingHitInfo.
      */
     emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo getBeingHitInfo();
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      */
     emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getBeingHitInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 372
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 8650
+   * Obf: OPODPPOAPKP
    * </pre>
    *
    * Protobuf type {@code EvtBeingHitNotify}
@@ -97,7 +95,7 @@ public final class EvtBeingHitNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 34: {
               emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder subBuilder = null;
               if (beingHitInfo_ != null) {
                 subBuilder = beingHitInfo_.toBuilder();
@@ -110,7 +108,7 @@ public final class EvtBeingHitNotifyOuterClass {
 
               break;
             }
-            case 48: {
+            case 72: {
               int rawValue = input.readEnum();
 
               forwardType_ = rawValue;
@@ -148,17 +146,17 @@ public final class EvtBeingHitNotifyOuterClass {
               emu.grasscutter.net.proto.EvtBeingHitNotifyOuterClass.EvtBeingHitNotify.class, emu.grasscutter.net.proto.EvtBeingHitNotifyOuterClass.EvtBeingHitNotify.Builder.class);
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 6;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
     private int forwardType_;
     /**
-     * <code>.ForwardType forward_type = 6;</code>
+     * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     @java.lang.Override public int getForwardTypeValue() {
       return forwardType_;
     }
     /**
-     * <code>.ForwardType forward_type = 6;</code>
+     * <code>.ForwardType forward_type = 9;</code>
      * @return The forwardType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
@@ -167,10 +165,10 @@ public final class EvtBeingHitNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
-    public static final int BEING_HIT_INFO_FIELD_NUMBER = 3;
+    public static final int BEING_HIT_INFO_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo beingHitInfo_;
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      * @return Whether the beingHitInfo field is set.
      */
     @java.lang.Override
@@ -178,7 +176,7 @@ public final class EvtBeingHitNotifyOuterClass {
       return beingHitInfo_ != null;
     }
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      * @return The beingHitInfo.
      */
     @java.lang.Override
@@ -186,7 +184,7 @@ public final class EvtBeingHitNotifyOuterClass {
       return beingHitInfo_ == null ? emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.getDefaultInstance() : beingHitInfo_;
     }
     /**
-     * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+     * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getBeingHitInfoOrBuilder() {
@@ -208,10 +206,10 @@ public final class EvtBeingHitNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (beingHitInfo_ != null) {
-        output.writeMessage(3, getBeingHitInfo());
+        output.writeMessage(4, getBeingHitInfo());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(6, forwardType_);
+        output.writeEnum(9, forwardType_);
       }
       unknownFields.writeTo(output);
     }
@@ -224,11 +222,11 @@ public final class EvtBeingHitNotifyOuterClass {
       size = 0;
       if (beingHitInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBeingHitInfo());
+          .computeMessageSize(4, getBeingHitInfo());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, forwardType_);
+          .computeEnumSize(9, forwardType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -365,10 +363,8 @@ public final class EvtBeingHitNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 372
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 8650
+     * Obf: OPODPPOAPKP
      * </pre>
      *
      * Protobuf type {@code EvtBeingHitNotify}
@@ -533,14 +529,14 @@ public final class EvtBeingHitNotifyOuterClass {
 
       private int forwardType_ = 0;
       /**
-       * <code>.ForwardType forward_type = 6;</code>
+       * <code>.ForwardType forward_type = 9;</code>
        * @return The enum numeric value on the wire for forwardType.
        */
       @java.lang.Override public int getForwardTypeValue() {
         return forwardType_;
       }
       /**
-       * <code>.ForwardType forward_type = 6;</code>
+       * <code>.ForwardType forward_type = 9;</code>
        * @param value The enum numeric value on the wire for forwardType to set.
        * @return This builder for chaining.
        */
@@ -551,7 +547,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 6;</code>
+       * <code>.ForwardType forward_type = 9;</code>
        * @return The forwardType.
        */
       @java.lang.Override
@@ -561,7 +557,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ForwardType forward_type = 6;</code>
+       * <code>.ForwardType forward_type = 9;</code>
        * @param value The forwardType to set.
        * @return This builder for chaining.
        */
@@ -575,7 +571,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 6;</code>
+       * <code>.ForwardType forward_type = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
@@ -589,14 +585,14 @@ public final class EvtBeingHitNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> beingHitInfoBuilder_;
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        * @return Whether the beingHitInfo field is set.
        */
       public boolean hasBeingHitInfo() {
         return beingHitInfoBuilder_ != null || beingHitInfo_ != null;
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        * @return The beingHitInfo.
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo getBeingHitInfo() {
@@ -607,7 +603,7 @@ public final class EvtBeingHitNotifyOuterClass {
         }
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public Builder setBeingHitInfo(emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo value) {
         if (beingHitInfoBuilder_ == null) {
@@ -623,7 +619,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public Builder setBeingHitInfo(
           emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder builderForValue) {
@@ -637,7 +633,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public Builder mergeBeingHitInfo(emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo value) {
         if (beingHitInfoBuilder_ == null) {
@@ -655,7 +651,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public Builder clearBeingHitInfo() {
         if (beingHitInfoBuilder_ == null) {
@@ -669,7 +665,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder getBeingHitInfoBuilder() {
         
@@ -677,7 +673,7 @@ public final class EvtBeingHitNotifyOuterClass {
         return getBeingHitInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       public emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder getBeingHitInfoOrBuilder() {
         if (beingHitInfoBuilder_ != null) {
@@ -688,7 +684,7 @@ public final class EvtBeingHitNotifyOuterClass {
         }
       }
       /**
-       * <code>.EvtBeingHitInfo being_hit_info = 3;</code>
+       * <code>.EvtBeingHitInfo being_hit_info = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.Builder, emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfoOrBuilder> 
@@ -770,18 +766,18 @@ public final class EvtBeingHitNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027EvtBeingHitNotify.proto\032\025EvtBeingHitIn" +
-      "fo.proto\032\021ForwardType.proto\"a\n\021EvtBeingH" +
-      "itNotify\022\"\n\014forward_type\030\006 \001(\0162\014.Forward" +
-      "Type\022(\n\016being_hit_info\030\003 \001(\0132\020.EvtBeingH" +
+      "\n\027EvtBeingHitNotify.proto\032\021ForwardType.p" +
+      "roto\032\025EvtBeingHitInfo.proto\"a\n\021EvtBeingH" +
+      "itNotify\022\"\n\014forward_type\030\t \001(\0162\014.Forward" +
+      "Type\022(\n\016being_hit_info\030\004 \001(\0132\020.EvtBeingH" +
       "itInfoB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.getDescriptor(),
         });
     internal_static_EvtBeingHitNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -789,8 +785,8 @@ public final class EvtBeingHitNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBeingHitNotify_descriptor,
         new java.lang.String[] { "ForwardType", "BeingHitInfo", });
-    emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

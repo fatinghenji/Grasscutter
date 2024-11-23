@@ -1,18 +1,14 @@
 package emu.grasscutter.game.systems;
 
 import emu.grasscutter.game.CoopRequest;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpReasonOuterClass.PlayerApplyEnterMpReason;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
+import emu.grasscutter.server.game.*;
+import emu.grasscutter.server.packet.send.*;
 
 public class MultiplayerSystem extends BaseGameSystem {
 
@@ -105,6 +101,11 @@ public class MultiplayerSystem extends BaseGameSystem {
     }
 
     public boolean leaveCoop(Player player) {
+        // Make sure player is not in home
+        if (player.getCurHomeWorld().isInHome(player)) {
+            return false;
+        }
+
         // Make sure player's world is multiplayer
         if (!player.getWorld().isMultiplayer()) {
             return false;

@@ -20,10 +20,8 @@ public final class HomeGetBasicInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4655
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 27734
+   * Obf: IEPBGIKMJFE
    * </pre>
    *
    * Protobuf type {@code HomeGetBasicInfoReq}
@@ -248,10 +246,8 @@ public final class HomeGetBasicInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4655
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 27734
+     * Obf: IEPBGIKMJFE
      * </pre>
      *
      * Protobuf type {@code HomeGetBasicInfoReq}

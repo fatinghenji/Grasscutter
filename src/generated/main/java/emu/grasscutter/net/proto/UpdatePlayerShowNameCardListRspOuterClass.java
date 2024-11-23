@@ -19,7 +19,7 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -43,9 +43,8 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4019
-   * EnetChannelId: 0
-   * EnetIsReliable: true
+   * CmdId: 5380
+   * Obf: HKCEGKBFPCM
    * </pre>
    *
    * Protobuf type {@code UpdatePlayerShowNameCardListRsp}
@@ -94,6 +93,11 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
             case 0:
               done = true;
               break;
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
             case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 showNameCardIdList_ = newIntList();
@@ -113,11 +117,6 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
                 showNameCardIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -155,10 +154,10 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
               emu.grasscutter.net.proto.UpdatePlayerShowNameCardListRspOuterClass.UpdatePlayerShowNameCardListRsp.class, emu.grasscutter.net.proto.UpdatePlayerShowNameCardListRspOuterClass.UpdatePlayerShowNameCardListRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 10;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 10;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -209,15 +208,15 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
+      }
       if (getShowNameCardIdListList().size() > 0) {
         output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(showNameCardIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < showNameCardIdList_.size(); i++) {
         output.writeUInt32NoTag(showNameCardIdList_.getInt(i));
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -228,6 +227,10 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < showNameCardIdList_.size(); i++) {
@@ -241,10 +244,6 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         showNameCardIdListMemoizedSerializedSize = dataSize;
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,9 +378,8 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4019
-     * EnetChannelId: 0
-     * EnetIsReliable: true
+     * CmdId: 5380
+     * Obf: HKCEGKBFPCM
      * </pre>
      *
      * Protobuf type {@code UpdatePlayerShowNameCardListRsp}
@@ -551,7 +549,7 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 10;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -559,7 +557,7 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 10;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -570,7 +568,7 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -727,7 +725,7 @@ public final class UpdatePlayerShowNameCardListRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n%UpdatePlayerShowNameCardListRsp.proto\"" +
       "R\n\037UpdatePlayerShowNameCardListRsp\022\017\n\007re" +
-      "tcode\030\r \001(\005\022\036\n\026show_name_card_id_list\030\014 " +
+      "tcode\030\n \001(\005\022\036\n\026show_name_card_id_list\030\014 " +
       "\003(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -36,12 +36,16 @@ public final class TowerLevelRecordOuterClass {
     int getSatisfiedCondList(int index);
 
     /**
-     * <code>uint32 level_id = 10;</code>
+     * <code>uint32 level_id = 9;</code>
      * @return The levelId.
      */
     int getLevelId();
   }
   /**
+   * <pre>
+   * Obf: AIDBCLODKJO
+   * </pre>
+   *
    * Protobuf type {@code TowerLevelRecord}
    */
   public static final class TowerLevelRecord extends
@@ -88,7 +92,7 @@ public final class TowerLevelRecordOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 72: {
 
               levelId_ = input.readUInt32();
               break;
@@ -177,10 +181,10 @@ public final class TowerLevelRecordOuterClass {
     }
     private int satisfiedCondListMemoizedSerializedSize = -1;
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 10;
+    public static final int LEVEL_ID_FIELD_NUMBER = 9;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 10;</code>
+     * <code>uint32 level_id = 9;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -204,7 +208,7 @@ public final class TowerLevelRecordOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (levelId_ != 0) {
-        output.writeUInt32(10, levelId_);
+        output.writeUInt32(9, levelId_);
       }
       if (getSatisfiedCondListList().size() > 0) {
         output.writeUInt32NoTag(106);
@@ -224,7 +228,7 @@ public final class TowerLevelRecordOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, levelId_);
+          .computeUInt32Size(9, levelId_);
       }
       {
         int dataSize = 0;
@@ -372,6 +376,10 @@ public final class TowerLevelRecordOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: AIDBCLODKJO
+     * </pre>
+     *
      * Protobuf type {@code TowerLevelRecord}
      */
     public static final class Builder extends
@@ -618,7 +626,7 @@ public final class TowerLevelRecordOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 9;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -626,7 +634,7 @@ public final class TowerLevelRecordOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 9;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -637,7 +645,7 @@ public final class TowerLevelRecordOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 10;</code>
+       * <code>uint32 level_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -715,7 +723,7 @@ public final class TowerLevelRecordOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026TowerLevelRecord.proto\"A\n\020TowerLevelRe" +
       "cord\022\033\n\023satisfied_cond_list\030\r \003(\r\022\020\n\010lev" +
-      "el_id\030\n \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "el_id\030\t \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

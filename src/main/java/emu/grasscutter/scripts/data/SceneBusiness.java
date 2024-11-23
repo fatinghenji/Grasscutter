@@ -1,10 +1,9 @@
 package emu.grasscutter.scripts.data;
 
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
 @Setter
 public class SceneBusiness {
-	public int type;
+    public int type;
 }

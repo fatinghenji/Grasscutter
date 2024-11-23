@@ -37,6 +37,10 @@ public final class VectorOuterClass {
     float getZ();
   }
   /**
+   * <pre>
+   * Obf: FMFHHKCONCE
+   * </pre>
+   *
    * Protobuf type {@code Vector}
    */
   public static final class Vector extends
@@ -345,6 +349,10 @@ public final class VectorOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: FMFHHKCONCE
+     * </pre>
+     *
      * Protobuf type {@code Vector}
      */
     public static final class Builder extends

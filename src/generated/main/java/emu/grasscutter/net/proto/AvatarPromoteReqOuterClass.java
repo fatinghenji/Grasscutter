@@ -26,10 +26,8 @@ public final class AvatarPromoteReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1664
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 23288
+   * Obf: MLDPIPBFIKB
    * </pre>
    *
    * Protobuf type {@code AvatarPromoteReq}
@@ -282,10 +280,8 @@ public final class AvatarPromoteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1664
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 23288
+     * Obf: MLDPIPBFIKB
      * </pre>
      *
      * Protobuf type {@code AvatarPromoteReq}

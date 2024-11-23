@@ -1,9 +1,7 @@
 package emu.grasscutter.game.player;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import dev.morphia.annotations.Entity;
+import java.util.*;
 
 @Entity(useDiscriminator = false)
 public class PlayerCollectionRecords {
@@ -19,7 +17,9 @@ public class PlayerCollectionRecords {
     public void addRecord(int configId, long expiredMillisecond) {
         Map<Integer, CollectionRecord> records;
         synchronized (records = getRecords()) {
-            records.put(configId, new CollectionRecord(configId, expiredMillisecond + System.currentTimeMillis()));
+            records.put(
+                    configId,
+                    new CollectionRecord(configId, expiredMillisecond + System.currentTimeMillis()));
         }
     }
 

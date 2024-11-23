@@ -5,17 +5,12 @@ import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
-import emu.grasscutter.server.packet.send.PacketServerAnnounceRevokeNotify;
+import emu.grasscutter.server.game.*;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Getter;
-import lombok.experimental.FieldDefaults;
-
 import java.util.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 public class AnnouncementSystem extends BaseGameSystem {
@@ -29,7 +24,8 @@ public class AnnouncementSystem extends BaseGameSystem {
 
     private int loadConfig() {
         try {
-            List<AnnounceConfigItem> announceConfigItems = DataLoader.loadList("Announcement.json", AnnounceConfigItem.class);
+            List<AnnounceConfigItem> announceConfigItems =
+                    DataLoader.loadList("Announcement.json", AnnounceConfigItem.class);
 
             announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
@@ -42,9 +38,9 @@ public class AnnouncementSystem extends BaseGameSystem {
 
     public List<Player> getOnlinePlayers() {
         return getServer().getWorlds().stream()
-            .map(World::getPlayers)
-            .flatMap(Collection::stream)
-            .toList();
+                .map(World::getPlayers)
+                .flatMap(Collection::stream)
+                .toList();
     }
 
     public void broadcast(List<AnnounceConfigItem> tpl) {
@@ -52,10 +48,11 @@ public class AnnouncementSystem extends BaseGameSystem {
             return;
         }
 
-        var list = tpl.stream()
-            .map(AnnounceConfigItem::toProto)
-            .map(AnnounceDataOuterClass.AnnounceData.Builder::build)
-            .toList();
+        var list =
+                tpl.stream()
+                        .map(AnnounceConfigItem::toProto)
+                        .map(AnnounceDataOuterClass.AnnounceData.Builder::build)
+                        .toList();
 
         getOnlinePlayers().forEach(i -> i.sendPacket(new PacketServerAnnounceNotify(list)));
     }
@@ -68,9 +65,14 @@ public class AnnouncementSystem extends BaseGameSystem {
         getOnlinePlayers().forEach(i -> i.sendPacket(new PacketServerAnnounceRevokeNotify(tplId)));
     }
 
+    public enum AnnounceType {
+        CENTER,
+        COUNTDOWN
+    }
+
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public class AnnounceConfigItem{
+    public class AnnounceConfigItem {
         int templateId;
         AnnounceType type;
         int frequency;
@@ -83,26 +85,19 @@ public class AnnouncementSystem extends BaseGameSystem {
         public AnnounceDataOuterClass.AnnounceData.Builder toProto() {
             var proto = AnnounceDataOuterClass.AnnounceData.newBuilder();
 
-            proto.setConfigId(templateId)
-                // I found the time here is useless
-                .setBeginTime(Utils.getCurrentSeconds() + 1)
-                .setEndTime(Utils.getCurrentSeconds() + 10);
+            proto
+                    .setConfigId(templateId)
+                    // I found the time here is useless
+                    .setBeginTime(Utils.getCurrentSeconds() + 1)
+                    .setEndTime(Utils.getCurrentSeconds() + 10);
 
             if (type == AnnounceType.CENTER) {
-                proto.setCenterSystemText(content)
-                    .setCenterSystemFrequency(frequency)
-                ;
-            }else {
-                proto.setCountDownText(content)
-                    .setCountDownFrequency(frequency)
-                ;
+                proto.setCenterSystemText(content).setCenterSystemFrequency(frequency);
+            } else {
+                proto.setCountDownText(content).setCountDownFrequency(frequency);
             }
 
             return proto;
         }
-    }
-
-    public enum AnnounceType{
-        CENTER, COUNTDOWN
     }
 }

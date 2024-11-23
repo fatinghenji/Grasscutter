@@ -15,6 +15,10 @@ public final class ForwardTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: CLILGMMMGCK
+   * </pre>
+   *
    * Protobuf enum {@code ForwardType}
    */
   public enum ForwardType

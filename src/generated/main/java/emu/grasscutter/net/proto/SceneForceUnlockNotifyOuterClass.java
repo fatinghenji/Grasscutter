@@ -19,7 +19,7 @@ public final class SceneForceUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_add = 10;</code>
+     * <code>bool is_add = 15;</code>
      * @return The isAdd.
      */
     boolean getIsAdd();
@@ -43,10 +43,8 @@ public final class SceneForceUnlockNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 206
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 3275
+   * Obf: AKPHLEGNIAH
    * </pre>
    *
    * Protobuf type {@code SceneForceUnlockNotify}
@@ -116,7 +114,7 @@ public final class SceneForceUnlockNotifyOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 80: {
+            case 120: {
 
               isAdd_ = input.readBool();
               break;
@@ -156,10 +154,10 @@ public final class SceneForceUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.SceneForceUnlockNotifyOuterClass.SceneForceUnlockNotify.class, emu.grasscutter.net.proto.SceneForceUnlockNotifyOuterClass.SceneForceUnlockNotify.Builder.class);
     }
 
-    public static final int IS_ADD_FIELD_NUMBER = 10;
+    public static final int IS_ADD_FIELD_NUMBER = 15;
     private boolean isAdd_;
     /**
-     * <code>bool is_add = 10;</code>
+     * <code>bool is_add = 15;</code>
      * @return The isAdd.
      */
     @java.lang.Override
@@ -218,7 +216,7 @@ public final class SceneForceUnlockNotifyOuterClass {
         output.writeUInt32NoTag(forceIdList_.getInt(i));
       }
       if (isAdd_ != false) {
-        output.writeBool(10, isAdd_);
+        output.writeBool(15, isAdd_);
       }
       unknownFields.writeTo(output);
     }
@@ -245,7 +243,7 @@ public final class SceneForceUnlockNotifyOuterClass {
       }
       if (isAdd_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isAdd_);
+          .computeBoolSize(15, isAdd_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -381,10 +379,8 @@ public final class SceneForceUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 206
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 3275
+     * Obf: AKPHLEGNIAH
      * </pre>
      *
      * Protobuf type {@code SceneForceUnlockNotify}
@@ -554,7 +550,7 @@ public final class SceneForceUnlockNotifyOuterClass {
 
       private boolean isAdd_ ;
       /**
-       * <code>bool is_add = 10;</code>
+       * <code>bool is_add = 15;</code>
        * @return The isAdd.
        */
       @java.lang.Override
@@ -562,7 +558,7 @@ public final class SceneForceUnlockNotifyOuterClass {
         return isAdd_;
       }
       /**
-       * <code>bool is_add = 10;</code>
+       * <code>bool is_add = 15;</code>
        * @param value The isAdd to set.
        * @return This builder for chaining.
        */
@@ -573,7 +569,7 @@ public final class SceneForceUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_add = 10;</code>
+       * <code>bool is_add = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAdd() {
@@ -729,7 +725,7 @@ public final class SceneForceUnlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SceneForceUnlockNotify.proto\"?\n\026SceneF" +
-      "orceUnlockNotify\022\016\n\006is_add\030\n \001(\010\022\025\n\rforc" +
+      "orceUnlockNotify\022\016\n\006is_add\030\017 \001(\010\022\025\n\rforc" +
       "e_id_list\030\002 \003(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };

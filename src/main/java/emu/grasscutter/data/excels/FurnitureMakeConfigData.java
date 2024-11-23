@@ -1,13 +1,10 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.experimental.FieldDefaults;
-
 import java.util.List;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -30,8 +27,6 @@ public class FurnitureMakeConfigData extends GameResource {
 
     @Override
     public void onLoad() {
-        this.materialItems = materialItems.stream()
-                .filter(x -> x.getId() > 0)
-                .toList();
+        this.materialItems = materialItems.stream().filter(x -> x.getId() > 0).toList();
     }
 }

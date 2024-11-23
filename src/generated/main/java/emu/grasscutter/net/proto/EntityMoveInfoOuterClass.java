@@ -58,6 +58,10 @@ public final class EntityMoveInfoOuterClass {
     boolean getIsReliable();
   }
   /**
+   * <pre>
+   * Obf: LHBMDEAGHFD
+   * </pre>
+   *
    * Protobuf type {@code EntityMoveInfo}
    */
   public static final class EntityMoveInfo extends
@@ -443,6 +447,10 @@ public final class EntityMoveInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: LHBMDEAGHFD
+     * </pre>
+     *
      * Protobuf type {@code EntityMoveInfo}
      */
     public static final class Builder extends

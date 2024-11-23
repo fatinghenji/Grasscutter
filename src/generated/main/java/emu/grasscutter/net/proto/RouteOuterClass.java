@@ -49,6 +49,10 @@ public final class RouteOuterClass {
     int getRouteType();
   }
   /**
+   * <pre>
+   * Obf: GPFODIPKJPN
+   * </pre>
+   *
    * Protobuf type {@code Route}
    */
   public static final class Route extends
@@ -364,6 +368,10 @@ public final class RouteOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: GPFODIPKJPN
+     * </pre>
+     *
      * Protobuf type {@code Route}
      */
     public static final class Builder extends

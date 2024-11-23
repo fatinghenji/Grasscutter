@@ -1,10 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.TakeBattlePassMissionPointRspOuterClass;
-
-import java.util.List;
+import emu.grasscutter.net.packet.*;
 
 public class PacketTakeBattlePassMissionPointRsp extends BasePacket {
     public PacketTakeBattlePassMissionPointRsp() {

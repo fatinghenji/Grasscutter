@@ -19,29 +19,27 @@ public final class AnchorPointOpRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 anchor_point_id = 12;</code>
+     * <code>uint32 anchor_point_id = 2;</code>
      * @return The anchorPointId.
      */
     int getAnchorPointId();
 
     /**
-     * <code>uint32 anchor_point_op_type = 4;</code>
+     * <code>uint32 anchor_point_op_type = 7;</code>
      * @return The anchorPointOpType.
      */
     int getAnchorPointOpType();
   }
   /**
    * <pre>
-   * CmdId: 4252
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 726
+   * Obf: DELBDBAHPJJ
    * </pre>
    *
    * Protobuf type {@code AnchorPointOpRsp}
@@ -88,19 +86,19 @@ public final class AnchorPointOpRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 16: {
 
-              anchorPointOpType_ = input.readUInt32();
+              anchorPointId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 96: {
+            case 56: {
 
-              anchorPointId_ = input.readUInt32();
+              anchorPointOpType_ = input.readUInt32();
               break;
             }
             default: {
@@ -135,10 +133,10 @@ public final class AnchorPointOpRspOuterClass {
               emu.grasscutter.net.proto.AnchorPointOpRspOuterClass.AnchorPointOpRsp.class, emu.grasscutter.net.proto.AnchorPointOpRspOuterClass.AnchorPointOpRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -146,10 +144,10 @@ public final class AnchorPointOpRspOuterClass {
       return retcode_;
     }
 
-    public static final int ANCHOR_POINT_ID_FIELD_NUMBER = 12;
+    public static final int ANCHOR_POINT_ID_FIELD_NUMBER = 2;
     private int anchorPointId_;
     /**
-     * <code>uint32 anchor_point_id = 12;</code>
+     * <code>uint32 anchor_point_id = 2;</code>
      * @return The anchorPointId.
      */
     @java.lang.Override
@@ -157,10 +155,10 @@ public final class AnchorPointOpRspOuterClass {
       return anchorPointId_;
     }
 
-    public static final int ANCHOR_POINT_OP_TYPE_FIELD_NUMBER = 4;
+    public static final int ANCHOR_POINT_OP_TYPE_FIELD_NUMBER = 7;
     private int anchorPointOpType_;
     /**
-     * <code>uint32 anchor_point_op_type = 4;</code>
+     * <code>uint32 anchor_point_op_type = 7;</code>
      * @return The anchorPointOpType.
      */
     @java.lang.Override
@@ -182,14 +180,14 @@ public final class AnchorPointOpRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (anchorPointOpType_ != 0) {
-        output.writeUInt32(4, anchorPointOpType_);
+      if (anchorPointId_ != 0) {
+        output.writeUInt32(2, anchorPointId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(6, retcode_);
       }
-      if (anchorPointId_ != 0) {
-        output.writeUInt32(12, anchorPointId_);
+      if (anchorPointOpType_ != 0) {
+        output.writeUInt32(7, anchorPointOpType_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,17 +198,17 @@ public final class AnchorPointOpRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (anchorPointOpType_ != 0) {
+      if (anchorPointId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, anchorPointOpType_);
+          .computeUInt32Size(2, anchorPointId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(6, retcode_);
       }
-      if (anchorPointId_ != 0) {
+      if (anchorPointOpType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, anchorPointId_);
+          .computeUInt32Size(7, anchorPointOpType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,10 +345,8 @@ public final class AnchorPointOpRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4252
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 726
+     * Obf: DELBDBAHPJJ
      * </pre>
      *
      * Protobuf type {@code AnchorPointOpRsp}
@@ -513,7 +509,7 @@ public final class AnchorPointOpRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -521,7 +517,7 @@ public final class AnchorPointOpRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -532,7 +528,7 @@ public final class AnchorPointOpRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -544,7 +540,7 @@ public final class AnchorPointOpRspOuterClass {
 
       private int anchorPointId_ ;
       /**
-       * <code>uint32 anchor_point_id = 12;</code>
+       * <code>uint32 anchor_point_id = 2;</code>
        * @return The anchorPointId.
        */
       @java.lang.Override
@@ -552,7 +548,7 @@ public final class AnchorPointOpRspOuterClass {
         return anchorPointId_;
       }
       /**
-       * <code>uint32 anchor_point_id = 12;</code>
+       * <code>uint32 anchor_point_id = 2;</code>
        * @param value The anchorPointId to set.
        * @return This builder for chaining.
        */
@@ -563,7 +559,7 @@ public final class AnchorPointOpRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 anchor_point_id = 12;</code>
+       * <code>uint32 anchor_point_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAnchorPointId() {
@@ -575,7 +571,7 @@ public final class AnchorPointOpRspOuterClass {
 
       private int anchorPointOpType_ ;
       /**
-       * <code>uint32 anchor_point_op_type = 4;</code>
+       * <code>uint32 anchor_point_op_type = 7;</code>
        * @return The anchorPointOpType.
        */
       @java.lang.Override
@@ -583,7 +579,7 @@ public final class AnchorPointOpRspOuterClass {
         return anchorPointOpType_;
       }
       /**
-       * <code>uint32 anchor_point_op_type = 4;</code>
+       * <code>uint32 anchor_point_op_type = 7;</code>
        * @param value The anchorPointOpType to set.
        * @return This builder for chaining.
        */
@@ -594,7 +590,7 @@ public final class AnchorPointOpRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 anchor_point_op_type = 4;</code>
+       * <code>uint32 anchor_point_op_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAnchorPointOpType() {
@@ -671,8 +667,8 @@ public final class AnchorPointOpRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026AnchorPointOpRsp.proto\"Z\n\020AnchorPointO" +
-      "pRsp\022\017\n\007retcode\030\005 \001(\005\022\027\n\017anchor_point_id" +
-      "\030\014 \001(\r\022\034\n\024anchor_point_op_type\030\004 \001(\rB\033\n\031" +
+      "pRsp\022\017\n\007retcode\030\006 \001(\005\022\027\n\017anchor_point_id" +
+      "\030\002 \001(\r\022\034\n\024anchor_point_op_type\030\007 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

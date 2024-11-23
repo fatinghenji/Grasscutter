@@ -1,27 +1,20 @@
 package emu.grasscutter.server.game;
 
-import java.io.File;
-import java.net.InetSocketAddress;
-import java.nio.file.Path;
+import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.SendPacketEvent;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-import lombok.Getter;
-import lombok.Setter;
-
-import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.Language.translate;
+import emu.grasscutter.utils.*;
+import io.netty.buffer.*;
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.nio.file.Path;
+import lombok.*;
 
 public class GameSession implements GameSessionManager.KcpChannel {
     private final GameServer server;
@@ -29,6 +22,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
     @Getter @Setter private Account account;
     @Getter private Player player;
+
+    @Getter private long encryptSeed = Crypto.ENCRYPT_SEED;
+    private byte[] encryptKey = Crypto.ENCRYPT_KEY;
 
     @Setter private boolean useSecretKey;
     @Getter @Setter private SessionState state;
@@ -41,6 +37,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
         this.server = server;
         this.state = SessionState.WAITING_FOR_TOKEN;
         this.lastPingTime = System.currentTimeMillis();
+
+        if (GAME_INFO.useUniquePacketKey) {
+            this.encryptKey = new byte[4096];
+            this.encryptSeed = Crypto.generateEncryptKeyAndSeed(this.encryptKey);
+        }
     }
 
     public GameServer getServer() {
@@ -97,20 +98,15 @@ public class GameSession implements GameSessionManager.KcpChannel {
     }
 
     public void logPacket(String sendOrRecv, int opcode, byte[] payload) {
-        Grasscutter.getLogger().info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
-        System.out.println(Utils.bytesToHex(payload));
+        Grasscutter.getLogger()
+                .info(sendOrRecv + ": " + PacketOpcodesUtils.getOpcodeName(opcode) + " (" + opcode + ")");
+        if (GAME_INFO.isShowPacketPayload) System.out.println(Utils.bytesToHex(payload));
     }
 
     public void send(BasePacket packet) {
         // Test
         if (packet.getOpcode() <= 0) {
             Grasscutter.getLogger().warn("Tried to send packet with missing cmd id!");
-            return;
-        }
-
-        // DO NOT REMOVE (unless we find a way to validate code before sending to client which I don't think we can)
-        // Stop WindSeedClientNotify from being sent for security purposes.
-        if (PacketOpcodesUtils.BANNED_PACKETS.contains(packet.getOpcode())) {
             return;
         }
 
@@ -122,7 +118,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
         // Log
         switch (GAME_INFO.logPackets) {
             case ALL -> {
-                if (!PacketOpcodesUtils.LOOP_PACKETS.contains(packet.getOpcode())) {
+                if (!PacketOpcodesUtils.LOOP_PACKETS.contains(packet.getOpcode())
+                        || GAME_INFO.isShowLoopPackets) {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
             }
@@ -136,15 +133,23 @@ public class GameSession implements GameSessionManager.KcpChannel {
                     logPacket("SEND", packet.getOpcode(), packet.getData());
                 }
             }
-            default -> {
-            }
+            default -> {}
         }
 
         // Invoke event.
         SendPacketEvent event = new SendPacketEvent(this, packet);
         event.call();
         if (!event.isCanceled()) { // If event is not cancelled, continue.
-            tunnel.writeData(event.getPacket().build());
+            try {
+                packet = event.getPacket();
+                var bytes = packet.build();
+                if (packet.shouldEncrypt) {
+                    Crypto.xor(bytes, packet.useDispatchKey() ? Crypto.DISPATCH_KEY : this.encryptKey);
+                }
+                tunnel.writeData(bytes);
+            } catch (Exception ignored) {
+                Grasscutter.getLogger().debug("Unable to send packet to client.");
+            }
         }
     }
 
@@ -154,15 +159,14 @@ public class GameSession implements GameSessionManager.KcpChannel {
         Grasscutter.getLogger().info(translate("messages.game.connect", this.getAddress().toString()));
     }
 
-
     @Override
     public void handleReceive(byte[] bytes) {
         // Decrypt and turn back into a packet
-        Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
+        Crypto.xor(bytes, useSecretKey() ? this.encryptKey : Crypto.DISPATCH_KEY);
         ByteBuf packet = Unpooled.wrappedBuffer(bytes);
 
         // Log
-        //logPacket(packet);
+        // logPacket(packet);
         // Handle
         try {
             boolean allDebug = GAME_INFO.logPackets == ServerDebugMode.ALL;
@@ -175,7 +179,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 int const1 = packet.readShort();
                 if (const1 != 17767) {
                     if (allDebug) {
-                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect 17767", const1);
+                        Grasscutter.getLogger()
+                                .error("Bad Data Package Received: got {} ,expect 17767", const1);
                     }
                     return; // Bad packet
                 }
@@ -192,7 +197,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 int const2 = packet.readShort();
                 if (const2 != -30293) {
                     if (allDebug) {
-                        Grasscutter.getLogger().error("Bad Data Package Received: got {} ,expect -30293", const2);
+                        Grasscutter.getLogger()
+                                .error("Bad Data Package Received: got {} ,expect -30293", const2);
                     }
                     return; // Bad packet
                 }
@@ -200,7 +206,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                 // Log packet
                 switch (GAME_INFO.logPackets) {
                     case ALL -> {
-                        if (!PacketOpcodesUtils.LOOP_PACKETS.contains(opcode)) {
+                        if (!PacketOpcodesUtils.LOOP_PACKETS.contains(opcode) || GAME_INFO.isShowLoopPackets) {
                             logPacket("RECV", opcode, payload);
                         }
                     }
@@ -214,8 +220,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                             logPacket("RECV", opcode, payload);
                         }
                     }
-                    default -> {
-                    }
+                    default -> {}
                 }
 
                 // Handle
@@ -224,7 +229,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            //byteBuf.release(); //Needn't
+            // byteBuf.release(); //Needn't
             packet.release();
         }
     }
@@ -232,8 +237,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Override
     public void handleClose() {
         setState(SessionState.INACTIVE);
-        //send disconnection pack in case of reconnection
-        Grasscutter.getLogger().info(translate("messages.game.disconnect", this.getAddress().toString()));
+        // send disconnection pack in case of reconnection
+        Grasscutter.getLogger()
+                .info(translate("messages.game.disconnect", this.getAddress().toString()));
         // Save after disconnecting
         if (this.isLoggedIn()) {
             Player player = getPlayer();

@@ -47,6 +47,10 @@ public final class MapMarkTipsInfoOuterClass {
     int getPointIdList(int index);
   }
   /**
+   * <pre>
+   * Obf: FCABMPGKCEL
+   * </pre>
+   *
    * Protobuf type {@code MapMarkTipsInfo}
    */
   public static final class MapMarkTipsInfo extends
@@ -218,7 +222,7 @@ public final class MapMarkTipsInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (tipsType_ != emu.grasscutter.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL.getNumber()) {
+      if (tipsType_ != emu.grasscutter.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.MARK_TIPS_DUNGEON_ELEMENT_TRIAL.getNumber()) {
         output.writeEnum(1, tipsType_);
       }
       if (getPointIdListList().size() > 0) {
@@ -237,7 +241,7 @@ public final class MapMarkTipsInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (tipsType_ != emu.grasscutter.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL.getNumber()) {
+      if (tipsType_ != emu.grasscutter.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.MARK_TIPS_DUNGEON_ELEMENT_TRIAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, tipsType_);
       }
@@ -386,6 +390,10 @@ public final class MapMarkTipsInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: FCABMPGKCEL
+     * </pre>
+     *
      * Protobuf type {@code MapMarkTipsInfo}
      */
     public static final class Builder extends

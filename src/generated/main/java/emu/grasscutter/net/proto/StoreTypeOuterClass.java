@@ -15,6 +15,10 @@ public final class StoreTypeOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * Obf: HDHLNCKJKCA
+   * </pre>
+   *
    * Protobuf enum {@code StoreType}
    */
   public enum StoreType

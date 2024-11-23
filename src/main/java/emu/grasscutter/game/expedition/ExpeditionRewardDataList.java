@@ -1,9 +1,7 @@
 package emu.grasscutter.game.expedition;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import emu.grasscutter.game.inventory.GameItem;
+import java.util.*;
 import lombok.Getter;
 
 public class ExpeditionRewardDataList {

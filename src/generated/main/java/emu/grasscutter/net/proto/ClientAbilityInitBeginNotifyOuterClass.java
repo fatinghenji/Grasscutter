@@ -19,17 +19,15 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 1;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 1112
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 4046
+   * Obf: PGKEMCJJJHK
    * </pre>
    *
    * Protobuf type {@code ClientAbilityInitBeginNotify}
@@ -76,7 +74,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 104: {
 
               entityId_ = input.readUInt32();
               break;
@@ -113,10 +111,10 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
               emu.grasscutter.net.proto.ClientAbilityInitBeginNotifyOuterClass.ClientAbilityInitBeginNotify.class, emu.grasscutter.net.proto.ClientAbilityInitBeginNotifyOuterClass.ClientAbilityInitBeginNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    public static final int ENTITY_ID_FIELD_NUMBER = 13;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 1;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -139,7 +137,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(1, entityId_);
+        output.writeUInt32(13, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -152,7 +150,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entityId_);
+          .computeUInt32Size(13, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +279,8 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1112
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 4046
+     * Obf: PGKEMCJJJHK
      * </pre>
      *
      * Protobuf type {@code ClientAbilityInitBeginNotify}
@@ -435,7 +431,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -443,7 +439,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -454,7 +450,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 1;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -532,7 +528,7 @@ public final class ClientAbilityInitBeginNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"ClientAbilityInitBeginNotify.proto\"1\n\034" +
       "ClientAbilityInitBeginNotify\022\021\n\tentity_i" +
-      "d\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "d\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

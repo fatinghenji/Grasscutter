@@ -63,7 +63,10 @@
       "game_version": "Wersja gry: %s",
       "resources": {
         "loading": "Ładowanie zasobów...",
-        "finish": "Załadowano zasoby."
+        "finish": "Załadowano zasoby.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "Błędne ID artefaktu.",
         "avatarId": "Błędne ID postaci.",
         "avatarLevel": "Błędny poziom postaci.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "Błędne ID obiektu.",
         "itemId": "Błędne ID przedmiotu.",
         "itemLevel": "Błędny poziom przedmiotu.",
@@ -124,6 +128,21 @@
       "no_account": "Nie znaleziono konta.",
       "description": "Twórz lub usuń konta."
     },
+    "achievement": {
+      "success": {
+        "grant": "🇺🇸Granted the achievement to %s.",
+        "revoke": "🇺🇸Revoked the achievement from %s.",
+        "progress": "🇺🇸Set progress of %s's achievement(id: %s) to %s.",
+        "grantall": "🇺🇸Granted %s achievement(s) to %s.",
+        "revokeall": "🇺🇸Revoked %s achievement(s) from %s."
+      },
+      "fail": {
+        "achievement_not_found": "🇺🇸Achievement not found.",
+        "already_achieved": "🇺🇸%s has already achieved the achievement.",
+        "not_yet_achieved": "🇺🇸%s hasn't achieved the achievement yet."
+      },
+      "description": "🇺🇸Grant, Revoke or Progress achievements."
+    },
     "announce": {
       "send_success": "Ogłoszenie zostało pomyślnie wysłane. Możesz je odwołać używając \"announce revoke %s\".",
       "refresh_success": "Odświeżono konfigurację ogłoszeń (w sumie jest ich %s).",
@@ -150,6 +169,10 @@
       "not_found_error": "Podane ID lochu jest nieprawidłowe.",
       "in_dungeon_error": "Wskazany gracz już jest w tym lochu.",
       "description": "Zmień loch, w którym ma się znajdować wskazany gracz."
+    },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
     },
     "give": {
       "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[, <ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
@@ -215,7 +238,32 @@
       "finished": "Zadanie %s zostało zakończone.",
       "not_found": "Nie ma zadania o podanym ID.",
       "invalid_id": "Błędny format ID zadania.",
-      "description": "Dodaj lub wykonaj wskazane zadanie."
+      "description": "Dodaj lub wykonaj wskazane zadanie.",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Odtwarza przerywnik filmowy"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Ponowne ładowanie konfiguracji...",
@@ -276,6 +324,9 @@
     "setProp": {
       "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass.\n\tMożliwe nazwy własności: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel | ...\n\tTa komenda ma więcej nazw własności, które może otrzymać. Możesz je wszystkie zobaczyć w pliku \"game/props/PlayerProperty.java\".\n\tW tym pliku, przyjmują one formę \"PROP_XXX_YYY_ZZZ\", ale powinieneś je zapisywać jako \"xxx_yyy_zzz\" jeśli chcesz je użyć w tej komendzie."
     },
+    "setSceneTag": {
+      "description": "Ustawia znaczniki sceny specyficzne dla konta. Kontroluje to takie rzeczy jak skały blokujące drzwi, widoczne budynki i inne (zwykle związane z zadaniami) rzeczy, które wpływają na to, co jest widoczne w twoim świecie."
+    },
     "setStats": {
       "description": "Ustaw statystykę walki dla obecnie wybranej postaci wybranego gracza.\n\tMożliwe nazwy statystyki: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\tDodatkowe obrażenia od żywiołu: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\tOdporność na żywioł: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
       "locked_to": "%s zablokowano dla %s.",
@@ -328,6 +379,17 @@
       "success": "Gracz %s został przeniesiony do pozycji (%s, %s, %s) w scenie o ID %s.",
       "description": "Przemieść wybranego gracza do podanej pozycji w podanej scenie."
     },
+    "trialAvatarActivity": {
+      "description": "Manipuluj funkcjami Trial Avatar Activity. Obejmuje to przełączanie stanów lochów i nagród.",
+      "not_found": "Nie znaleziono danych gracza o aktywności awatara w wersji próbnej. Być może aktywność nie jest włączona.",
+      "invalid_param": "Niewłaściwy parametr.",
+      "schedule_not_found": "Nie znaleziono harmonogramu %s.",
+      "success_schedule": "Zmieniono identyfikator harmonogramu na %s.",
+      "success_dungeon": "Przełączono stan lochów awatara %s.",
+      "success_dungeon_all": "Zmieniono stan lochów wszystkich awatarów.",
+      "success_reward": "Zmieniono status nagrody awatara %s.",
+      "success_reward_all": "Zmieniono status nagrody dla wszystkich awatarów."
+    },
     "weather": {
       "success": "ID pogody został ustawiony na %s, a typ klimatu na %s.",
       "status": "Bieżące ID pogody to %s, a typ klimatu to %s.",
@@ -347,6 +409,12 @@
       "success": "Pomyślnie odbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "description": "Odbanuj podanego gracza."
+    },
+    "info": {
+      "description": "🇺🇸Provides the sender information about the server."
+    },
+    "debug": {
+      "description": "🇺🇸Useful debugging commands for developers."
     }
   },
   "gacha": {
@@ -398,6 +466,11 @@
     "enabling_plugin": "Włączanie pluginu: %s",
     "enabling_failed": "Nie udało się załączyć pluginu: %s",
     "disabling_plugin": "Wyłączanie pluginu: %s",
-    "disabling_failed": "Nie udało się wyłączyć pluginu: %s"
+    "disabling_failed": "Nie udało się wyłączyć pluginu: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
+      "outdated": "🇺🇸Plugin %s is using an outdated API method."
+    }
   }
 }

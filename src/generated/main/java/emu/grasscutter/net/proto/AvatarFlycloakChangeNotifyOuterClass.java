@@ -19,23 +19,21 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 flycloak_id = 8;</code>
+     * <code>uint32 flycloak_id = 2;</code>
      * @return The flycloakId.
      */
     int getFlycloakId();
 
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
    * <pre>
-   * CmdId: 1643
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 23578
+   * Obf: GHNNAHDIIKE
    * </pre>
    *
    * Protobuf type {@code AvatarFlycloakChangeNotify}
@@ -84,12 +82,12 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
               break;
             case 16: {
 
-              avatarGuid_ = input.readUInt64();
+              flycloakId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 24: {
 
-              flycloakId_ = input.readUInt32();
+              avatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -124,10 +122,10 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarFlycloakChangeNotifyOuterClass.AvatarFlycloakChangeNotify.class, emu.grasscutter.net.proto.AvatarFlycloakChangeNotifyOuterClass.AvatarFlycloakChangeNotify.Builder.class);
     }
 
-    public static final int FLYCLOAK_ID_FIELD_NUMBER = 8;
+    public static final int FLYCLOAK_ID_FIELD_NUMBER = 2;
     private int flycloakId_;
     /**
-     * <code>uint32 flycloak_id = 8;</code>
+     * <code>uint32 flycloak_id = 2;</code>
      * @return The flycloakId.
      */
     @java.lang.Override
@@ -135,10 +133,10 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
       return flycloakId_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 2;</code>
+     * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -160,11 +158,11 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(2, avatarGuid_);
-      }
       if (flycloakId_ != 0) {
-        output.writeUInt32(8, flycloakId_);
+        output.writeUInt32(2, flycloakId_);
+      }
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(3, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,13 +173,13 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, avatarGuid_);
-      }
       if (flycloakId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, flycloakId_);
+          .computeUInt32Size(2, flycloakId_);
+      }
+      if (avatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,10 +313,8 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1643
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 23578
+     * Obf: GHNNAHDIIKE
      * </pre>
      *
      * Protobuf type {@code AvatarFlycloakChangeNotify}
@@ -475,7 +471,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
 
       private int flycloakId_ ;
       /**
-       * <code>uint32 flycloak_id = 8;</code>
+       * <code>uint32 flycloak_id = 2;</code>
        * @return The flycloakId.
        */
       @java.lang.Override
@@ -483,7 +479,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
         return flycloakId_;
       }
       /**
-       * <code>uint32 flycloak_id = 8;</code>
+       * <code>uint32 flycloak_id = 2;</code>
        * @param value The flycloakId to set.
        * @return This builder for chaining.
        */
@@ -494,7 +490,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 flycloak_id = 8;</code>
+       * <code>uint32 flycloak_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearFlycloakId() {
@@ -506,7 +502,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -514,7 +510,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -525,7 +521,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 2;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -603,7 +599,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n AvatarFlycloakChangeNotify.proto\"F\n\032Av" +
       "atarFlycloakChangeNotify\022\023\n\013flycloak_id\030" +
-      "\010 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004B\033\n\031emu.grassc" +
+      "\002 \001(\r\022\023\n\013avatar_guid\030\003 \001(\004B\033\n\031emu.grassc" +
       "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

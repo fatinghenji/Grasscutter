@@ -31,6 +31,10 @@ public final class Uint32PairOuterClass {
     int getValue();
   }
   /**
+   * <pre>
+   * Obf: CBDJBGDIJBB
+   * </pre>
+   *
    * Protobuf type {@code Uint32Pair}
    */
   public static final class Uint32Pair extends
@@ -306,6 +310,10 @@ public final class Uint32PairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: CBDJBGDIJBB
+     * </pre>
+     *
      * Protobuf type {@code Uint32Pair}
      */
     public static final class Builder extends

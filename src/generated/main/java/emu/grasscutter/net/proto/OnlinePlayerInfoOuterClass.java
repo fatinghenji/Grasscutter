@@ -146,6 +146,10 @@ public final class OnlinePlayerInfoOuterClass {
         getPsnIdBytes();
   }
   /**
+   * <pre>
+   * Obf: BJKIIJGIJPA
+   * </pre>
+   *
    * Protobuf type {@code OnlinePlayerInfo}
    */
   public static final class OnlinePlayerInfo extends
@@ -922,6 +926,10 @@ public final class OnlinePlayerInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: BJKIIJGIJPA
+     * </pre>
+     *
      * Protobuf type {@code OnlinePlayerInfo}
      */
     public static final class Builder extends

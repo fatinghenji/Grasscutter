@@ -20,10 +20,8 @@ public final class HomeSceneInitFinishReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4674
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 27778
+   * Obf: DLBMDKGFBOI
    * </pre>
    *
    * Protobuf type {@code HomeSceneInitFinishReq}
@@ -248,10 +246,8 @@ public final class HomeSceneInitFinishReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4674
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 27778
+     * Obf: DLBMDKGFBOI
      * </pre>
      *
      * Protobuf type {@code HomeSceneInitFinishReq}

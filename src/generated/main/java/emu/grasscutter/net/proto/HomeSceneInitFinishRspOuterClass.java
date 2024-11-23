@@ -26,10 +26,8 @@ public final class HomeSceneInitFinishRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4505
-   * EnetChannelId: 0
-   * EnetIsReliable: false
-   * IsAllowClient: true
+   * CmdId: 9038
+   * Obf: HMJEHDPFOIL
    * </pre>
    *
    * Protobuf type {@code HomeSceneInitFinishRsp}
@@ -281,10 +279,8 @@ public final class HomeSceneInitFinishRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4505
-     * EnetChannelId: 0
-     * EnetIsReliable: false
-     * IsAllowClient: true
+     * CmdId: 9038
+     * Obf: HMJEHDPFOIL
      * </pre>
      *
      * Protobuf type {@code HomeSceneInitFinishRsp}

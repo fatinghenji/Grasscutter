@@ -49,6 +49,10 @@ public final class AvatarExcelInfoOuterClass {
     long getCombatConfigHash();
   }
   /**
+   * <pre>
+   * Obf: HGHGOIMIAMF
+   * </pre>
+   *
    * Protobuf type {@code AvatarExcelInfo}
    */
   public static final class AvatarExcelInfo extends
@@ -410,6 +414,10 @@ public final class AvatarExcelInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * Obf: HGHGOIMIAMF
+     * </pre>
+     *
      * Protobuf type {@code AvatarExcelInfo}
      */
     public static final class Builder extends

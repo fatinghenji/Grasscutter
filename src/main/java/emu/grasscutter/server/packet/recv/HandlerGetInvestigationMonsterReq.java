@@ -1,8 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetInvestigationMonsterReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetInvestigationMonsterRsp;
@@ -14,11 +12,10 @@ public class HandlerGetInvestigationMonsterReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.parseFrom(payload);
 
-        session.send(new PacketGetInvestigationMonsterRsp(
-                session.getPlayer(),
-                session.getServer().getWorldDataSystem(),
-                req.getCityIdListList()));
-
+        session.send(
+                new PacketGetInvestigationMonsterRsp(
+                        session.getPlayer(),
+                        session.getServer().getWorldDataSystem(),
+                        req.getCityIdListList()));
     }
-
 }
